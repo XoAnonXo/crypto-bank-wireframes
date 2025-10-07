@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earn - Crypto Bank</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="phone-container">
+        <!-- Status Bar -->
+        <div class="status-bar">
+            <div class="time">9:41</div>
+            <div class="status-icons">
+                <span>📶</span>
+                <span>📡</span>
+                <span>🔋</span>
+            </div>
+        </div>
+
+        <!-- Header -->
+        <div class="header">
+            <div class="header-icon" onclick="window.location.href='menu.html'">☰</div>
+            <h1>Earn</h1>
+            <div class="header-icon">❓</div>
+        </div>
+
+        <!-- Content -->
+        <div class="content">
+            <!-- Total Earnings Card -->
+            <div class="card" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white;">
+                <div style="font-size: 14px; opacity: 0.9; margin-bottom: 4px;">Total Earnings</div>
+                <div style="font-size: 32px; font-weight: 700; margin-bottom: 8px;">$1,234.56</div>
+                <div style="font-size: 13px; opacity: 0.9;">+$45.67 this month</div>
+            </div>
+
+            <!-- Active Positions -->
+            <div class="card">
+                <div class="card-header">
+                    <div style="font-size: 16px; font-weight: 600;">Active Positions</div>
+                    <span style="font-size: 13px; color: #10b981; font-weight: 600;">$8,450.00</span>
+                </div>
+
+                <div style="background: #f8f9fa; padding: 16px; border-radius: 12px; margin-bottom: 12px;">
+                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 12px;">
+                        <div>
+                            <div style="font-size: 15px; font-weight: 600; margin-bottom: 4px;">liquidUSD Vault</div>
+                            <div style="font-size: 13px; color: #666;">Deposited: $5,000.00</div>
+                        </div>
+                        <div style="text-align: right;">
+                            <div style="font-size: 18px; font-weight: 700; color: #10b981;">5.2%</div>
+                            <div style="font-size: 11px; color: #666;">APY</div>
+                        </div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; font-size: 12px; color: #666;">
+                        <span>Earned: $21.67</span>
+                        <span>Started 30 days ago</span>
+                    </div>
+                </div>
+
+                <div style="background: #f8f9fa; padding: 16px; border-radius: 12px;">
+                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 12px;">
+                        <div>
+                            <div style="font-size: 15px; font-weight: 600; margin-bottom: 4px;">ETH Staking</div>
+                            <div style="font-size: 13px; color: #666;">Deposited: 1.5 ETH</div>
+                        </div>
+                        <div style="text-align: right;">
+                            <div style="font-size: 18px; font-weight: 700; color: #10b981;">4.8%</div>
+                            <div style="font-size: 11px; color: #666;">APY</div>
+                        </div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; font-size: 12px; color: #666;">
+                        <span>Earned: 0.012 ETH</span>
+                        <span>Started 90 days ago</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Available Opportunities -->
+            <div style="font-size: 16px; font-weight: 600; margin: 20px 0 12px 4px;">Available Opportunities</div>
+
+            <div class="card" style="margin-bottom: 12px;">
+                <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 12px;">
+                    <div style="flex: 1;">
+                        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+                            <div style="width: 32px; height: 32px; background: #667eea; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">$</div>
+                            <div style="font-size: 16px; font-weight: 600;">USDC Savings</div>
+                        </div>
+                        <div style="font-size: 13px; color: #666; line-height: 1.4; margin-bottom: 8px;">
+                            Safe and stable yield on USD Coin
+                        </div>
+                        <div style="display: flex; gap: 12px; font-size: 12px;">
+                            <div>
+                                <span style="color: #666;">Min:</span>
+                                <span style="font-weight: 600;"> $100</span>
+                            </div>
+                            <div>
+                                <span style="color: #666;">Lock:</span>
+                                <span style="font-weight: 600;"> Flexible</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="text-align: right;">
+                        <div style="font-size: 24px; font-weight: 700; color: #10b981; margin-bottom: 2px;">8.5%</div>
+                        <div style="font-size: 11px; color: #666;">APY</div>
+                    </div>
+                </div>
+                <button class="btn btn-primary" style="width: 100%;">Deposit Now</button>
+            </div>
+
+            <div class="card" style="margin-bottom: 12px;">
+                <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 12px;">
+                    <div style="flex: 1;">
+                        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+                            <div style="width: 32px; height: 32px; background: #f7931a; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">₿</div>
+                            <div style="font-size: 16px; font-weight: 600;">Bitcoin Vault</div>
+                        </div>
+                        <div style="font-size: 13px; color: #666; line-height: 1.4; margin-bottom: 8px;">
+                            Earn interest on your Bitcoin holdings
+                        </div>
+                        <div style="display: flex; gap: 12px; font-size: 12px;">
+                            <div>
+                                <span style="color: #666;">Min:</span>
+                                <span style="font-weight: 600;"> 0.001 BTC</span>
+                            </div>
+                            <div>
+                                <span style="color: #666;">Lock:</span>
+                                <span style="font-weight: 600;"> 30 days</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="text-align: right;">
+                        <div style="font-size: 24px; font-weight: 700; color: #10b981; margin-bottom: 2px;">3.5%</div>
+                        <div style="font-size: 11px; color: #666;">APY</div>
+                    </div>
+                </div>
+                <button class="btn btn-primary" style="width: 100%;">Deposit Now</button>
+            </div>
+
+            <div class="card">
+                <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 12px;">
+                    <div style="flex: 1;">
+                        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+                            <div style="width: 32px; height: 32px; background: #627eea; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">Ξ</div>
+                            <div style="font-size: 16px; font-weight: 600;">DeFi Liquidity Pool</div>
+                        </div>
+                        <div style="font-size: 13px; color: #666; line-height: 1.4; margin-bottom: 8px;">
+                            High yield DeFi opportunity with ETH/USDC
+                        </div>
+                        <div style="display: flex; gap: 12px; font-size: 12px;">
+                            <div>
+                                <span style="color: #666;">Min:</span>
+                                <span style="font-weight: 600;"> $500</span>
+                            </div>
+                            <div>
+                                <span style="color: #666;">Risk:</span>
+                                <span style="font-weight: 600; color: #f59e0b;"> Medium</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="text-align: right;">
+                        <div style="font-size: 24px; font-weight: 700; color: #10b981; margin-bottom: 2px;">12.8%</div>
+                        <div style="font-size: 11px; color: #666;">APY</div>
+                    </div>
+                </div>
+                <button class="btn btn-primary" style="width: 100%;">Deposit Now</button>
+            </div>
+
+            <div style="background: #dbeafe; padding: 16px; border-radius: 12px; margin-top: 16px;">
+                <div style="font-size: 13px; font-weight: 600; margin-bottom: 4px; color: #1e40af;">💡 How It Works</div>
+                <div style="font-size: 12px; color: #1e40af; line-height: 1.5;">
+                    Your crypto earns interest automatically. Withdraw anytime (flexible) or lock for higher rates. All yields are paid out daily.
+                </div>
+            </div>
+        </div>
+
+        <!-- Floating Bottom Navigation -->
+        <div style="position: absolute; bottom: 20px; left: 20px; right: 20px; background: rgba(26, 26, 26, 0.95); backdrop-filter: blur(10px); border-radius: 24px; padding: 12px 8px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3); display: flex; justify-content: space-around; align-items: center; z-index: 100;">
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; cursor: pointer; color: #999;" onclick="window.location.href='dashboard.html'">
+                <div style="font-size: 22px;">🏠</div>
+                <div style="font-size: 10px; font-weight: 500;">Home</div>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; cursor: pointer; color: #999;" onclick="window.location.href='loans.html'">
+                <div style="font-size: 22px;">🏦</div>
+                <div style="font-size: 10px; font-weight: 500;">Loans</div>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; cursor: pointer; color: #999;" onclick="window.location.href='transactions.html'">
+                <div style="font-size: 22px;">📊</div>
+                <div style="font-size: 10px; font-weight: 500;">Activity</div>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; cursor: pointer; color: #fff;" onclick="window.location.href='earn.html'">
+                <div style="font-size: 22px;">💰</div>
+                <div style="font-size: 10px; font-weight: 600;">Earn</div>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; cursor: pointer; color: #999;" onclick="window.location.href='menu.html'">
+                <div style="font-size: 22px;">⋮⋮</div>
+                <div style="font-size: 10px; font-weight: 500;">More</div>
+            </div>
+            <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 12px rgba(168, 85, 247, 0.4);">
+                <div style="font-size: 24px;">🛒</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+

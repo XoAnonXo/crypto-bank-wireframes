@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membership - Crypto Bank</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="phone-container">
+        <!-- Status Bar -->
+        <div class="status-bar">
+            <div class="time">9:41</div>
+            <div class="status-icons">
+                <span>📶</span>
+                <span>📡</span>
+                <span>🔋</span>
+            </div>
+        </div>
+
+        <!-- Header -->
+        <div class="header">
+            <button class="back-btn" onclick="window.location.href='menu.html'">←</button>
+            <h1>Membership</h1>
+            <div style="width: 28px;"></div>
+        </div>
+
+        <!-- Content -->
+        <div class="content">
+            <!-- Current Tier Card -->
+            <div class="card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                <div style="text-align: center; padding: 20px 0;">
+                    <div style="font-size: 64px; margin-bottom: 12px;">⭐</div>
+                    <div style="font-size: 14px; opacity: 0.9; margin-bottom: 4px;">Current Tier</div>
+                    <div style="font-size: 28px; font-weight: 700; margin-bottom: 8px;">Core Member</div>
+                    <div style="font-size: 13px; opacity: 0.85;">Member since January 2024</div>
+                </div>
+            </div>
+
+            <!-- Points Progress -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">Rewards Points</div>
+                    <div style="font-size: 20px; font-weight: 700; color: #667eea;">2,450</div>
+                </div>
+                
+                <div style="margin: 16px 0;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                        <span style="font-size: 13px; color: #666;">Progress to Gold</span>
+                        <span style="font-size: 13px; font-weight: 600;">2,450 / 5,000</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 49%;"></div>
+                    </div>
+                    <div style="font-size: 12px; color: #666; margin-top: 4px;">2,550 points to next tier</div>
+                </div>
+
+                <div style="background: #f8f9fa; padding: 12px; border-radius: 12px;">
+                    <div style="font-size: 13px; font-weight: 600; margin-bottom: 4px;">Earn More Points</div>
+                    <div style="font-size: 12px; color: #666; line-height: 1.4;">
+                        Earn 1 point per $10 spent • Refer friends for bonus points
+                    </div>
+                </div>
+            </div>
+
+            <!-- Current Benefits -->
+            <div class="card">
+                <div style="font-size: 16px; font-weight: 600; margin-bottom: 16px;">Your Benefits</div>
+
+                <div style="display: flex; align-items: start; margin-bottom: 16px;">
+                    <div style="width: 32px; height: 32px; background: #d1fae5; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-right: 12px; flex-shrink: 0;">✓</div>
+                    <div>
+                        <div style="font-size: 14px; font-weight: 600; margin-bottom: 2px;">No Monthly Fees</div>
+                        <div style="font-size: 13px; color: #666; line-height: 1.4;">Zero account maintenance fees</div>
+                    </div>
+                </div>
+
+                <div style="display: flex; align-items: start; margin-bottom: 16px;">
+                    <div style="width: 32px; height: 32px; background: #d1fae5; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-right: 12px; flex-shrink: 0;">✓</div>
+                    <div>
+                        <div style="font-size: 14px; font-weight: 600; margin-bottom: 2px;">2% Cashback</div>
+                        <div style="font-size: 13px; color: #666; line-height: 1.4;">On all card purchases</div>
+                    </div>
+                </div>
+
+                <div style="display: flex; align-items: start; margin-bottom: 16px;">
+                    <div style="width: 32px; height: 32px; background: #d1fae5; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-right: 12px; flex-shrink: 0;">✓</div>
+                    <div>
+                        <div style="font-size: 14px; font-weight: 600; margin-bottom: 2px;">Free Transfers</div>
+                        <div style="font-size: 13px; color: #666; line-height: 1.4;">Unlimited crypto & fiat transfers</div>
+                    </div>
+                </div>
+
+                <div style="display: flex; align-items: start;">
+                    <div style="width: 32px; height: 32px; background: #d1fae5; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-right: 12px; flex-shrink: 0;">✓</div>
+                    <div>
+                        <div style="font-size: 14px; font-weight: 600; margin-bottom: 2px;">Priority Support</div>
+                        <div style="font-size: 13px; color: #666; line-height: 1.4;">24/7 customer service access</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Membership Tiers -->
+            <div class="card">
+                <div style="font-size: 16px; font-weight: 600; margin-bottom: 16px;">All Membership Tiers</div>
+
+                <div style="padding: 16px; background: #f8f9fa; border-radius: 12px; margin-bottom: 12px; border: 2px solid #667eea;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                        <div style="font-size: 16px; font-weight: 600;">⭐ Core</div>
+                        <span class="badge badge-info">Current</span>
+                    </div>
+                    <div style="font-size: 13px; color: #666; margin-bottom: 8px;">0 - 4,999 points</div>
+                    <div style="font-size: 12px; color: #666;">2% cashback • Free transfers</div>
+                </div>
+
+                <div style="padding: 16px; background: #fef3c7; border-radius: 12px; margin-bottom: 12px;">
+                    <div style="font-size: 16px; font-weight: 600; margin-bottom: 8px;">🥇 Gold</div>
+                    <div style="font-size: 13px; color: #666; margin-bottom: 8px;">5,000 - 14,999 points</div>
+                    <div style="font-size: 12px; color: #666;">3% cashback • Travel discounts • Lounge access</div>
+                </div>
+
+                <div style="padding: 16px; background: linear-gradient(135deg, #e0e7ff 0%, #ddd6fe 100%); border-radius: 12px;">
+                    <div style="font-size: 16px; font-weight: 600; margin-bottom: 8px;">💎 Platinum</div>
+                    <div style="font-size: 13px; color: #666; margin-bottom: 8px;">15,000+ points</div>
+                    <div style="font-size: 12px; color: #666;">5% cashback • Premium benefits • Concierge service</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Navigation -->
+        <div class="bottom-nav">
+            <div class="nav-item" onclick="window.location.href='dashboard.html'">
+                <div class="nav-icon">🏠</div>
+                <div>Home</div>
+            </div>
+            <div class="nav-item" onclick="window.location.href='transactions.html'">
+                <div class="nav-icon">📊</div>
+                <div>Activity</div>
+            </div>
+            <div class="nav-item" onclick="window.location.href='earn.html'">
+                <div class="nav-icon">💰</div>
+                <div>Earn</div>
+            </div>
+            <div class="nav-item" onclick="window.location.href='cards.html'">
+                <div class="nav-icon">💳</div>
+                <div>Card</div>
+            </div>
+            <div class="nav-item" onclick="window.location.href='menu.html'">
+                <div class="nav-icon">⚙️</div>
+                <div>More</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+

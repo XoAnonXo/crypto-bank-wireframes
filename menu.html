@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Crypto Bank</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="phone-container">
+        <!-- Status Bar -->
+        <div class="status-bar">
+            <div class="time">9:41</div>
+            <div class="status-icons">
+                <span>📶</span>
+                <span>📡</span>
+                <span>🔋</span>
+            </div>
+        </div>
+
+        <!-- Header -->
+        <div class="header">
+            <button class="back-btn" onclick="window.location.href='dashboard.html'">←</button>
+            <h1>Menu</h1>
+            <div style="width: 28px;"></div>
+        </div>
+
+        <!-- Content -->
+        <div class="content">
+            <!-- Account Switcher -->
+            <div class="card">
+                <div class="list-item" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; margin-bottom: 0;">
+                    <div class="list-icon" style="background: rgba(255,255,255,0.2); font-size: 24px;">👤</div>
+                    <div class="list-content">
+                        <div class="list-title" style="color: white;">John Doe</div>
+                        <div class="list-subtitle" style="color: rgba(255,255,255,0.8);">john.doe@email.com</div>
+                    </div>
+                    <div style="font-size: 20px;">↕️</div>
+                </div>
+            </div>
+
+            <!-- Account Management -->
+            <div class="card">
+                <div style="font-size: 12px; color: #999; margin-bottom: 12px; font-weight: 600; text-transform: uppercase;">Account</div>
+                
+                <div class="list-item" onclick="window.location.href='membership.html'">
+                    <div class="list-icon">⭐</div>
+                    <div class="list-content">
+                        <div class="list-title">Membership</div>
+                        <div class="list-subtitle">Core Member</div>
+                    </div>
+                    <div>→</div>
+                </div>
+
+                <div class="list-item">
+                    <div class="list-icon">💎</div>
+                    <div class="list-content">
+                        <div class="list-title">Rewards</div>
+                        <div class="list-subtitle">2,450 points</div>
+                    </div>
+                    <div>→</div>
+                </div>
+
+                <div class="list-item" onclick="window.location.href='promotions.html'">
+                    <div class="list-icon">🎁</div>
+                    <div class="list-content">
+                        <div class="list-title">Promotions</div>
+                        <div class="list-subtitle">View active offers</div>
+                    </div>
+                    <div>→</div>
+                </div>
+            </div>
+
+            <!-- Wallet & Services -->
+            <div class="card">
+                <div style="font-size: 12px; color: #999; margin-bottom: 12px; font-weight: 600; text-transform: uppercase;">Wallet & Services</div>
+                
+                <div class="list-item" onclick="window.location.href='connect-wallet.html'">
+                    <div class="list-icon">🔗</div>
+                    <div class="list-content">
+                        <div class="list-title">Connected Wallets</div>
+                        <div class="list-subtitle">2 wallets connected</div>
+                    </div>
+                    <div>→</div>
+                </div>
+
+                <div class="list-item" onclick="window.location.href='transactions.html'">
+                    <div class="list-icon">📜</div>
+                    <div class="list-content">
+                        <div class="list-title">Transaction History</div>
+                        <div class="list-subtitle">View all activity</div>
+                    </div>
+                    <div>→</div>
+                </div>
+
+                <div class="list-item" onclick="window.location.href='spending-limits.html'">
+                    <div class="list-icon">🎯</div>
+                    <div class="list-content">
+                        <div class="list-title">Spending Limits</div>
+                        <div class="list-subtitle">Manage limits</div>
+                    </div>
+                    <div>→</div>
+                </div>
+
+                <div class="list-item" onclick="window.location.href='travel.html'">
+                    <div class="list-icon">✈️</div>
+                    <div class="list-content">
+                        <div class="list-title">Travel Portal</div>
+                        <div class="list-subtitle">Book hotels & flights</div>
+                    </div>
+                    <div>→</div>
+                </div>
+            </div>
+
+            <!-- Settings -->
+            <div class="card">
+                <div style="font-size: 12px; color: #999; margin-bottom: 12px; font-weight: 600; text-transform: uppercase;">Settings</div>
+                
+                <div class="list-item" onclick="window.location.href='settings.html'">
+                    <div class="list-icon">⚙️</div>
+                    <div class="list-content">
+                        <div class="list-title">Account Settings</div>
+                        <div class="list-subtitle">Security & preferences</div>
+                    </div>
+                    <div>→</div>
+                </div>
+
+                <div class="list-item">
+                    <div class="list-icon">❓</div>
+                    <div class="list-content">
+                        <div class="list-title">Help & Support</div>
+                        <div class="list-subtitle">Get assistance</div>
+                    </div>
+                    <div>→</div>
+                </div>
+
+                <div class="list-item">
+                    <div class="list-icon">📄</div>
+                    <div class="list-content">
+                        <div class="list-title">Legal & Privacy</div>
+                        <div class="list-subtitle">Terms & policies</div>
+                    </div>
+                    <div>→</div>
+                </div>
+            </div>
+
+            <button class="btn btn-secondary" style="width: 100%; margin-top: 8px;">
+                🚪 Log Out
+            </button>
+        </div>
+
+        <!-- Bottom Navigation -->
+        <div class="bottom-nav">
+            <div class="nav-item" onclick="window.location.href='dashboard.html'">
+                <div class="nav-icon">🏠</div>
+                <div>Home</div>
+            </div>
+            <div class="nav-item" onclick="window.location.href='transactions.html'">
+                <div class="nav-icon">📊</div>
+                <div>Activity</div>
+            </div>
+            <div class="nav-item" onclick="window.location.href='earn.html'">
+                <div class="nav-icon">💰</div>
+                <div>Earn</div>
+            </div>
+            <div class="nav-item" onclick="window.location.href='cards.html'">
+                <div class="nav-icon">💳</div>
+                <div>Card</div>
+            </div>
+            <div class="nav-item active">
+                <div class="nav-icon">⚙️</div>
+                <div>More</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+

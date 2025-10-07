@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promotions - Crypto Bank</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="phone-container">
+        <!-- Status Bar -->
+        <div class="status-bar">
+            <div class="time">9:41</div>
+            <div class="status-icons">
+                <span>📶</span>
+                <span>📡</span>
+                <span>🔋</span>
+            </div>
+        </div>
+
+        <!-- Header -->
+        <div class="header">
+            <button class="back-btn" onclick="window.location.href='menu.html'">←</button>
+            <h1>Promotions</h1>
+            <div style="width: 28px;"></div>
+        </div>
+
+        <!-- Content -->
+        <div class="content">
+            <div style="text-align: center; margin-bottom: 24px;">
+                <div style="font-size: 48px; margin-bottom: 12px;">🎁</div>
+                <h2 style="font-size: 20px; margin-bottom: 8px;">Exclusive Offers</h2>
+                <p style="color: #666; font-size: 14px;">
+                    Special promotions and rewards just for you
+                </p>
+            </div>
+
+            <!-- Active Promotions -->
+            <div style="font-size: 12px; font-weight: 600; color: #999; text-transform: uppercase; margin: 20px 0 12px 4px;">Active Offers</div>
+
+            <div class="card" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; margin-bottom: 12px;">
+                <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 12px;">
+                    <span class="badge" style="background: rgba(255,255,255,0.3); color: white;">Limited Time</span>
+                    <div style="font-size: 32px;">💰</div>
+                </div>
+                <div style="font-size: 18px; font-weight: 700; margin-bottom: 8px;">Deposit Bonus</div>
+                <div style="font-size: 14px; opacity: 0.95; line-height: 1.5; margin-bottom: 16px;">
+                    Earn 5% bonus on your first deposit of $1,000 or more. Get up to $500 bonus!
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <div style="font-size: 12px; opacity: 0.85;">Expires in 7 days</div>
+                    <button class="btn" style="background: white; color: #10b981; padding: 10px 20px;">
+                        Claim Now
+                    </button>
+                </div>
+            </div>
+
+            <div class="card" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); color: white; margin-bottom: 12px;">
+                <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 12px;">
+                    <span class="badge" style="background: rgba(255,255,255,0.3); color: white;">Ongoing</span>
+                    <div style="font-size: 32px;">👥</div>
+                </div>
+                <div style="font-size: 18px; font-weight: 700; margin-bottom: 8px;">Referral Rewards</div>
+                <div style="font-size: 14px; opacity: 0.95; line-height: 1.5; margin-bottom: 16px;">
+                    Refer a friend and earn $50 when they make their first deposit. They get $50 too!
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <div style="font-size: 12px; opacity: 0.85;">3 friends referred</div>
+                    <button class="btn" style="background: white; color: #f59e0b; padding: 10px 20px;">
+                        Share Link
+                    </button>
+                </div>
+            </div>
+
+            <!-- Upcoming Promotions -->
+            <div style="font-size: 12px; font-weight: 600; color: #999; text-transform: uppercase; margin: 24px 0 12px 4px;">Coming Soon</div>
+
+            <div class="card">
+                <div style="display: flex; gap: 12px;">
+                    <div style="width: 48px; height: 48px; background: #f0f7ff; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px; flex-shrink: 0;">🎂</div>
+                    <div style="flex: 1;">
+                        <div style="font-size: 15px; font-weight: 600; margin-bottom: 4px;">Birthday Bonus</div>
+                        <div style="font-size: 13px; color: #666; line-height: 1.4; margin-bottom: 6px;">
+                            Special rewards on your birthday month - coming in November!
+                        </div>
+                        <span class="badge badge-info">November 2024</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div style="display: flex; gap: 12px;">
+                    <div style="width: 48px; height: 48px; background: #fef3c7; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px; flex-shrink: 0;">🎄</div>
+                    <div style="flex: 1;">
+                        <div style="font-size: 15px; font-weight: 600; margin-bottom: 4px;">Holiday Special</div>
+                        <div style="font-size: 13px; color: #666; line-height: 1.4; margin-bottom: 6px;">
+                            Exclusive year-end promotions and double cashback during the holiday season.
+                        </div>
+                        <span class="badge badge-warning">December 2024</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Past Promotions -->
+            <div style="font-size: 12px; font-weight: 600; color: #999; text-transform: uppercase; margin: 24px 0 12px 4px;">Recently Expired</div>
+
+            <div class="card" style="opacity: 0.6;">
+                <div style="display: flex; gap: 12px;">
+                    <div style="width: 48px; height: 48px; background: #f8f9fa; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px; flex-shrink: 0;">🎉</div>
+                    <div style="flex: 1;">
+                        <div style="font-size: 15px; font-weight: 600; margin-bottom: 4px;">Welcome Bonus</div>
+                        <div style="font-size: 13px; color: #666; line-height: 1.4; margin-bottom: 6px;">
+                            You earned $100 sign-up bonus when you joined!
+                        </div>
+                        <span class="badge" style="background: #f0f0f0; color: #666;">Claimed</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="opacity: 0.6;">
+                <div style="display: flex; gap: 12px;">
+                    <div style="width: 48px; height: 48px; background: #f8f9fa; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px; flex-shrink: 0;">💳</div>
+                    <div style="flex: 1;">
+                        <div style="font-size: 15px; font-weight: 600; margin-bottom: 4px;">First Card Purchase</div>
+                        <div style="font-size: 13px; color: #666; line-height: 1.4; margin-bottom: 6px;">
+                            Extra 500 points for your first card transaction.
+                        </div>
+                        <span class="badge" style="background: #f0f0f0; color: #666;">Claimed</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Info Box -->
+            <div style="background: #dbeafe; padding: 16px; border-radius: 12px; margin-top: 20px;">
+                <div style="font-size: 13px; font-weight: 600; margin-bottom: 4px; color: #1e40af;">💡 Pro Tip</div>
+                <div style="font-size: 12px; color: #1e40af; line-height: 1.5;">
+                    Enable push notifications to never miss exclusive offers and limited-time promotions!
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Navigation -->
+        <div class="bottom-nav">
+            <div class="nav-item" onclick="window.location.href='dashboard.html'">
+                <div class="nav-icon">🏠</div>
+                <div>Home</div>
+            </div>
+            <div class="nav-item" onclick="window.location.href='transactions.html'">
+                <div class="nav-icon">📊</div>
+                <div>Activity</div>
+            </div>
+            <div class="nav-item" onclick="window.location.href='earn.html'">
+                <div class="nav-icon">💰</div>
+                <div>Earn</div>
+            </div>
+            <div class="nav-item" onclick="window.location.href='cards.html'">
+                <div class="nav-icon">💳</div>
+                <div>Card</div>
+            </div>
+            <div class="nav-item" onclick="window.location.href='menu.html'">
+                <div class="nav-icon">⚙️</div>
+                <div>More</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+

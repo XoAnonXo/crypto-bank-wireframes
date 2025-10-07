@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Approve Spending - Crypto Bank</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .wallet-item {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 12px;
+            margin-bottom: 8px;
+            transition: all 0.3s;
+        }
+        .wallet-item.expanded {
+            background: #f0f7ff;
+            border: 2px solid #667eea;
+        }
+        .token-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .token-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #667eea;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+        .token-info {
+            flex: 1;
+            min-width: 0;
+        }
+        .token-name {
+            font-size: 14px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 2px;
+        }
+        .token-amount {
+            font-size: 12px;
+            color: #666;
+        }
+        .token-value {
+            text-align: right;
+            margin-right: 8px;
+        }
+        .token-usd {
+            font-size: 14px;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+        .token-price {
+            font-size: 11px;
+            color: #666;
+        }
+        .use-btn {
+            padding: 6px 16px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .use-btn:hover {
+            background: #5568d3;
+        }
+        .action-buttons {
+            display: none;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid #e0e0e0;
+        }
+        .action-buttons.show {
+            display: grid;
+        }
+        .action-btn {
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .approve-btn {
+            background: #10b981;
+            color: white;
+        }
+        .send-btn {
+            background: #667eea;
+            color: white;
+        }
+        
+        /* Modal Styles */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-overlay.show {
+            display: flex;
+        }
+        
+        .modal {
+            background: white;
+            border-radius: 20px;
+            padding: 24px;
+            width: calc(100% - 60px);
+            max-width: 340px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+        
+        .modal-header {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #1a1a1a;
+        }
+        
+        .modal-text {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .amount-toggle {
+            display: flex;
+            background: #f0f0f0;
+            border-radius: 8px;
+            padding: 4px;
+            margin-bottom: 12px;
+        }
+        
+        .toggle-btn {
+            flex: 1;
+            padding: 8px;
+            background: transparent;
+            border: none;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #666;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .toggle-btn.active {
+            background: white;
+            color: #667eea;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .amount-input-wrapper {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        
+        .amount-input {
+            width: 100%;
+            padding: 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            font-size: 24px;
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        .amount-input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .max-btn {
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="phone-container">
+        <!-- Status Bar -->
+        <div class="status-bar">
+            <div class="time">9:41</div>
+            <div class="status-icons">
+                <span>📶</span>
+                <span>📡</span>
+                <span>🔋</span>
+            </div>
+        </div>
+
+        <!-- Header -->
+        <div class="header">
+            <button class="back-btn" onclick="window.location.href='dashboard.html'">←</button>
+            <select id="viewSelector" style="background: #f0f0f0; border: none; padding: 8px 32px 8px 16px; border-radius: 8px; font-size: 16px; font-weight: 600; color: #1a1a1a; cursor: pointer; appearance: none; background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg width=%2712%27 height=%278%27 viewBox=%270 0 12 8%27 fill=%27none%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cpath d=%27M1 1L6 6L11 1%27 stroke=%27%231a1a1a%27 stroke-width=%272%27 stroke-linecap=%27round%27/%3E%3C/svg%3E'); background-repeat: no-repeat; background-position: right 12px center;" onchange="switchView()">
+                <option value="wallet">Wallet</option>
+                <option value="vault">Deposit</option>
+            </select>
+            <button class="btn btn-primary" id="depositBtn" style="display: none; padding: 8px 16px; font-size: 14px; border-radius: 8px;" onclick="window.location.href='deposit-select.html'">+ Deposit</button>
+        </div>
+
+        <!-- Content -->
+        <div class="content">
+            <!-- Total Value -->
+            <div class="card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                <div style="font-size: 14px; opacity: 0.9; margin-bottom: 4px;" id="balanceLabel">Wallet Balance</div>
+                <div style="font-size: 32px; font-weight: 700;" id="balanceAmount">$1,036</div>
+            </div>
+
+            <!-- Assets List -->
+            <div style="font-size: 14px; font-weight: 600; margin: 20px 0 12px 4px;" id="assetsTitle">Your Assets</div>
+            
+            <!-- Wallet Assets -->
+            <div id="walletAssets">
+
+            <!-- ETH -->
+            <div class="wallet-item" id="eth-1">
+                <div class="token-row">
+                    <div class="token-icon" style="background: #627eea;">Ξ</div>
+                    <div class="token-info">
+                        <div class="token-name">ETH</div>
+                        <div class="token-amount">0.1610</div>
+                    </div>
+                    <div class="token-value">
+                        <div class="token-usd">$730.24</div>
+                        <div class="token-price">@$4,535.74</div>
+                    </div>
+                    <button class="use-btn" onclick="toggleActions('eth-1')">Use</button>
+                </div>
+                <div class="action-buttons" id="actions-eth-1">
+                    <button class="action-btn approve-btn">Approve Spending</button>
+                    <button class="action-btn send-btn">Send to Vault</button>
+                </div>
+            </div>
+
+            <!-- ETH (staked) -->
+            <div class="wallet-item" id="eth-2">
+                <div class="token-row">
+                    <div class="token-icon" style="background: #627eea; position: relative;">
+                        Ξ
+                        <div style="position: absolute; bottom: -2px; right: -2px; width: 14px; height: 14px; background: #3b82f6; border-radius: 50%; border: 2px solid white;"></div>
+                    </div>
+                    <div class="token-info">
+                        <div class="token-name">ETH</div>
+                        <div class="token-amount">0.0160</div>
+                    </div>
+                    <div class="token-value">
+                        <div class="token-usd">$72.39</div>
+                        <div class="token-price">@$4,535.74</div>
+                    </div>
+                    <button class="use-btn" onclick="toggleActions('eth-2')">Use</button>
+                </div>
+                <div class="action-buttons" id="actions-eth-2">
+                    <button class="action-btn approve-btn">Approve Spending</button>
+                    <button class="action-btn send-btn">Send to Vault</button>
+                </div>
+            </div>
+
+            <!-- BNB -->
+            <div class="wallet-item" id="bnb">
+                <div class="token-row">
+                    <div class="token-icon" style="background: #f3ba2f;">
+                        <img src="data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 24 24' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5'/%3E%3C/svg%3E" alt="BNB" style="width: 20px; height: 20px;">
+                    </div>
+                    <div class="token-info">
+                        <div class="token-name">BNB</div>
+                        <div class="token-amount">0.0348</div>
+                    </div>
+                    <div class="token-value">
+                        <div class="token-usd">$40.60</div>
+                        <div class="token-price">@$1,166.80</div>
+                    </div>
+                    <button class="use-btn" onclick="toggleActions('bnb')">Use</button>
+                </div>
+                <div class="action-buttons" id="actions-bnb">
+                    <button class="action-btn approve-btn">Approve Spending</button>
+                    <button class="action-btn send-btn">Send to Vault</button>
+                </div>
+            </div>
+
+            <!-- USDC -->
+            <div class="wallet-item" id="usdc">
+                <div class="token-row">
+                    <div class="token-icon" style="background: #2775ca; position: relative;">
+                        $
+                        <div style="position: absolute; bottom: -2px; right: -2px; width: 14px; height: 14px; background: #3b82f6; border-radius: 50%; border: 2px solid white;"></div>
+                    </div>
+                    <div class="token-info">
+                        <div class="token-name">USDC</div>
+                        <div class="token-amount">10.8273</div>
+                    </div>
+                    <div class="token-value">
+                        <div class="token-usd">$10.82</div>
+                        <div class="token-price">@$0.9997</div>
+                    </div>
+                    <button class="use-btn" onclick="toggleActions('usdc')">Use</button>
+                </div>
+                <div class="action-buttons" id="actions-usdc">
+                    <button class="action-btn approve-btn">Approve Spending</button>
+                    <button class="action-btn send-btn">Send to Vault</button>
+                </div>
+            </div>
+
+            <!-- USDT0 -->
+            <div class="wallet-item" id="usdt">
+                <div class="token-row">
+                    <div class="token-icon" style="background: #26a17b;">$</div>
+                    <div class="token-info">
+                        <div class="token-name">USDT0</div>
+                        <div class="token-amount">18.7984</div>
+                    </div>
+                    <div class="token-value">
+                        <div class="token-usd">$18.80</div>
+                        <div class="token-price">@$1.0002</div>
+                    </div>
+                    <button class="use-btn" onclick="toggleActions('usdt')">Use</button>
+                </div>
+                <div class="action-buttons" id="actions-usdt">
+                    <button class="action-btn approve-btn">Approve Spending</button>
+                    <button class="action-btn send-btn">Send to Vault</button>
+                </div>
+            </div>
+
+            <!-- wS -->
+            <div class="wallet-item" id="ws">
+                <div class="token-row">
+                    <div class="token-icon" style="background: #1a1a1a;">
+                        <img src="data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 24 24' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z'/%3E%3C/svg%3E" alt="wS" style="width: 16px; height: 16px;">
+                    </div>
+                    <div class="token-info">
+                        <div class="token-name">wS</div>
+                        <div class="token-amount">30.3127</div>
+                    </div>
+                    <div class="token-value">
+                        <div class="token-usd">$8.54</div>
+                        <div class="token-price">@$0.2816</div>
+                    </div>
+                    <button class="use-btn" onclick="toggleActions('ws')">Use</button>
+                </div>
+                <div class="action-buttons" id="actions-ws">
+                    <button class="action-btn approve-btn">Approve Spending</button>
+                    <button class="action-btn send-btn">Send to Vault</button>
+                </div>
+            </div>
+
+            <!-- WETH -->
+            <div class="wallet-item" id="weth-1">
+                <div class="token-row">
+                    <div class="token-icon" style="background: #627eea; position: relative;">
+                        Ξ
+                        <div style="position: absolute; bottom: -2px; right: -2px; width: 14px; height: 14px; background: #8b5cf6; border-radius: 50%; border: 2px solid white;"></div>
+                    </div>
+                    <div class="token-info">
+                        <div class="token-name">WETH</div>
+                        <div class="token-amount">0.0023</div>
+                    </div>
+                    <div class="token-value">
+                        <div class="token-usd">$10.39</div>
+                        <div class="token-price">@$4,536.74</div>
+                    </div>
+                    <button class="use-btn" onclick="toggleActions('weth-1')">Use</button>
+                </div>
+                <div class="action-buttons" id="actions-weth-1">
+                    <button class="action-btn approve-btn">Approve Spending</button>
+                    <button class="action-btn send-btn">Send to Vault</button>
+                </div>
+            </div>
+
+            <!-- ZRO -->
+            <div class="wallet-item" id="zro">
+                <div class="token-row">
+                    <div class="token-icon" style="background: #1a1a1a;">
+                        <div style="width: 8px; height: 8px; background: white; border-radius: 50%;"></div>
+                    </div>
+                    <div class="token-info">
+                        <div class="token-name">ZRO</div>
+                        <div class="token-amount">2.5408</div>
+                    </div>
+                    <div class="token-value">
+                        <div class="token-usd">$5.81</div>
+                        <div class="token-price">@$2.2879</div>
+                    </div>
+                    <button class="use-btn" onclick="toggleActions('zro')">Use</button>
+                </div>
+                <div class="action-buttons" id="actions-zro">
+                    <button class="action-btn approve-btn">Approve Spending</button>
+                    <button class="action-btn send-btn">Send to Vault</button>
+                </div>
+            </div>
+
+            </div>
+
+            <!-- Vault Assets -->
+            <div id="vaultAssets" style="display: none;"></div>
+
+            <!-- Info Notice -->
+            <div style="background: #dbeafe; padding: 12px 16px; border-radius: 12px; margin-top: 20px;" id="infoNotice">
+                <div style="font-size: 12px; color: #1e40af; line-height: 1.5;">
+                    💡 <strong>Tip:</strong> Approve spending to use tokens for card purchases, or send to vault for safekeeping and earning yield.
+                </div>
+            </div>
+        </div>
+
+        <!-- Floating Bottom Navigation -->
+        <div style="position: absolute; bottom: 20px; left: 20px; right: 20px; background: rgba(26, 26, 26, 0.95); backdrop-filter: blur(10px); border-radius: 24px; padding: 12px 8px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3); display: flex; justify-content: space-around; align-items: center; z-index: 100;">
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; cursor: pointer; color: #999;" onclick="window.location.href='dashboard.html'">
+                <div style="font-size: 22px;">🏠</div>
+                <div style="font-size: 10px; font-weight: 500;">Home</div>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; cursor: pointer; color: #999;" onclick="window.location.href='loans.html'">
+                <div style="font-size: 22px;">🏦</div>
+                <div style="font-size: 10px; font-weight: 500;">Loans</div>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; cursor: pointer; color: #999;" onclick="window.location.href='transactions.html'">
+                <div style="font-size: 22px;">📊</div>
+                <div style="font-size: 10px; font-weight: 500;">Activity</div>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; cursor: pointer; color: #999;" onclick="window.location.href='earn.html'">
+                <div style="font-size: 22px;">💰</div>
+                <div style="font-size: 10px; font-weight: 500;">Earn</div>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; cursor: pointer; color: #999;" onclick="window.location.href='menu.html'">
+                <div style="font-size: 22px;">⋮⋮</div>
+                <div style="font-size: 10px; font-weight: 500;">More</div>
+            </div>
+            <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 12px rgba(168, 85, 247, 0.4);">
+                <div style="font-size: 24px;">🛒</div>
+            </div>
+        </div>
+
+        <!-- Approval Modal -->
+        <div class="modal-overlay" id="approvalModal" onclick="closeApprovalModal(event)">
+            <div class="modal" onclick="event.stopPropagation()">
+                <div class="modal-header" id="modalTitle">Approve Spending</div>
+                <div class="modal-text" id="modalDescription">
+                    You are about to make an approval to spend your <strong id="tokenName">ETH</strong>. Please select the amount. Your balance will not change, but your spending allowance on your debit card is going to increase by the approved amount.
+                </div>
+                
+                <!-- Toggle USD/Token -->
+                <div class="amount-toggle">
+                    <button class="toggle-btn active" id="usdToggle" onclick="toggleCurrency('usd')">USD</button>
+                    <button class="toggle-btn" id="tokenToggle" onclick="toggleCurrency('token')">Token</button>
+                </div>
+                
+                <!-- Amount Input -->
+                <div class="amount-input-wrapper">
+                    <input type="number" class="amount-input" id="amountInput" placeholder="0.00" step="0.01">
+                    <button class="max-btn" onclick="setMaxAmount()">MAX</button>
+                </div>
+                
+                <div style="text-align: center; font-size: 12px; color: #666; margin-bottom: 20px;" id="equivalentAmount">
+                    ≈ $0.00
+                </div>
+                
+                <!-- Action Buttons -->
+                <button class="btn-full" id="approveBtn" onclick="submitApproval()">
+                    Approve
+                </button>
+                <button class="btn btn-secondary" style="width: 100%; margin-top: 8px;" onclick="closeApprovalModal()">
+                    Cancel
+                </button>
+            </div>
+        </div>
+
+        <!-- Send to Vault Modal -->
+        <div class="modal-overlay" id="sendModal" onclick="closeSendModal(event)">
+            <div class="modal" onclick="event.stopPropagation()">
+                <div class="modal-header">Send to Vault</div>
+                <div class="modal-text">
+                    Select amount to send <strong id="sendTokenName">ETH</strong> to your vault.
+                </div>
+                
+                <!-- Toggle USD/Token -->
+                <div class="amount-toggle">
+                    <button class="toggle-btn active" id="sendUsdToggle" onclick="toggleSendCurrency('usd')">USD</button>
+                    <button class="toggle-btn" id="sendTokenToggle" onclick="toggleSendCurrency('token')">Token</button>
+                </div>
+                
+                <!-- Amount Input -->
+                <div class="amount-input-wrapper">
+                    <input type="number" class="amount-input" id="sendAmountInput" placeholder="0.00" step="0.01">
+                    <button class="max-btn" onclick="setSendMaxAmount()">MAX</button>
+                </div>
+                
+                <div style="text-align: center; font-size: 12px; color: #666; margin-bottom: 20px;" id="sendEquivalentAmount">
+                    ≈ $0.00
+                </div>
+                
+                <!-- Action Buttons -->
+                <button class="btn-full" id="sendBtn" onclick="submitSend()">
+                    Send
+                </button>
+                <button class="btn btn-secondary" style="width: 100%; margin-top: 8px;" onclick="closeSendModal()">
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentToken = '';
+        let tokenAmount = '';
+        let usdAmount = '';
+        let currentCurrency = 'usd';
+        let tokenPrice = 0;
+        
+        let sendCurrentCurrency = 'usd';
+        // Wallet and Vault data
+        const walletData = {
+            balance: '$1,036',
+            assets: [
+                { id: 'eth-1', icon: 'Ξ', color: '#627eea', name: 'ETH', amount: '0.1610', usd: '$730.24', price: '@$4,535.74', badge: false },
+                { id: 'eth-2', icon: 'Ξ', color: '#627eea', name: 'ETH', amount: '0.0160', usd: '$72.39', price: '@$4,535.74', badge: true },
+                { id: 'bnb', icon: 'B', color: '#f3ba2f', name: 'BNB', amount: '0.0348', usd: '$40.60', price: '@$1,166.80', badge: false },
+                { id: 'usdc', icon: '$', color: '#2775ca', name: 'USDC', amount: '10.8273', usd: '$10.82', price: '@$0.9997', badge: true },
+                { id: 'usdt', icon: '$', color: '#26a17b', name: 'USDT0', amount: '18.7984', usd: '$18.80', price: '@$1.0002', badge: false },
+                { id: 'ws', icon: 'W', color: '#1a1a1a', name: 'wS', amount: '30.3127', usd: '$8.54', price: '@$0.2816', badge: false },
+                { id: 'weth-1', icon: 'Ξ', color: '#627eea', name: 'WETH', amount: '0.0023', usd: '$10.39', price: '@$4,536.74', badge: true },
+                { id: 'zro', icon: '○', color: '#1a1a1a', name: 'ZRO', amount: '2.5408', usd: '$5.81', price: '@$2.2879', badge: false },
+            ]
+        };
+
+        const vaultData = {
+            balance: '$45,892',
+            assets: [
+                { id: 'lusd', icon: '$', color: '#667eea', name: 'liquidUSD', amount: '12,450.00', usd: '$12,450', price: '@$1.00', badge: false },
+                { id: 'veth', icon: 'Ξ', color: '#627eea', name: 'ETH', amount: '8.5000', usd: '$21,334', price: '@$2,510.00', badge: false },
+                { id: 'vbtc', icon: '₿', color: '#f7931a', name: 'BTC', amount: '0.2400', usd: '$10,108', price: '@$42,116.00', badge: false },
+                { id: 'vusdc', icon: '$', color: '#2775ca', name: 'USDC', amount: '2,000.00', usd: '$2,000', price: '@$1.00', badge: false },
+            ]
+        };
+
+        function renderAssets(data, containerId) {
+            const container = document.getElementById(containerId);
+            container.innerHTML = data.assets.map(asset => `
+                <div class="wallet-item" id="${asset.id}">
+                    <div class="token-row">
+                        <div class="token-icon" style="background: ${asset.color}; position: relative;">
+                            ${asset.icon}
+                            ${asset.badge ? '<div style="position: absolute; bottom: -2px; right: -2px; width: 14px; height: 14px; background: #3b82f6; border-radius: 50%; border: 2px solid white;"></div>' : ''}
+                        </div>
+                        <div class="token-info">
+                            <div class="token-name">${asset.name}</div>
+                            <div class="token-amount">${asset.amount}</div>
+                        </div>
+                        <div class="token-value">
+                            <div class="token-usd">${asset.usd}</div>
+                            <div class="token-price">${asset.price}</div>
+                        </div>
+                        <button class="use-btn" onclick="toggleActions('${asset.id}')">Use</button>
+                    </div>
+                    <div class="action-buttons" id="actions-${asset.id}">
+                        <button class="action-btn approve-btn" onclick="openApprovalModal('${asset.name}', '${asset.amount}', '${asset.usd}')">Approve Spending</button>
+                        <button class="action-btn send-btn" onclick="openSendModal('${asset.name}', '${asset.amount}', '${asset.usd}')">Send to Vault</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function switchView() {
+            const selector = document.getElementById('viewSelector');
+            const view = selector.value;
+            
+            const walletContainer = document.getElementById('walletAssets');
+            const vaultContainer = document.getElementById('vaultAssets');
+            const balanceLabel = document.getElementById('balanceLabel');
+            const balanceAmount = document.getElementById('balanceAmount');
+            const infoNotice = document.getElementById('infoNotice');
+            const depositBtn = document.getElementById('depositBtn');
+            
+            if (view === 'wallet') {
+                // Show wallet
+                walletContainer.style.display = 'block';
+                vaultContainer.style.display = 'none';
+                balanceLabel.textContent = 'Wallet Balance';
+                balanceAmount.textContent = walletData.balance;
+                renderAssets(walletData, 'walletAssets');
+                infoNotice.innerHTML = '<div style="font-size: 12px; color: #1e40af; line-height: 1.5;">💡 <strong>Tip:</strong> Approve spending to use tokens for card purchases, or send to vault for safekeeping and earning yield.</div>';
+                document.getElementById('viewSelector').style.display = 'block';
+                document.getElementById('depositBtn').style.display = 'none';
+            } else {
+                // Show deposit selection (navigate to deposit-select.html)
+                window.location.href = 'deposit-select.html';
+            }
+        }
+
+        function toggleActions(itemId) {
+            const item = document.getElementById(itemId);
+            const actions = document.getElementById('actions-' + itemId);
+            const useBtn = item.querySelector('.use-btn');
+            
+            // Close all other items
+            document.querySelectorAll('.wallet-item').forEach(el => {
+                if (el.id !== itemId) {
+                    el.classList.remove('expanded');
+                    const otherActions = el.querySelector('.action-buttons');
+                    if (otherActions) otherActions.classList.remove('show');
+                    const otherBtn = el.querySelector('.use-btn');
+                    if (otherBtn) otherBtn.textContent = 'Use';
+                }
+            });
+            
+            // Toggle current item
+            if (actions.classList.contains('show')) {
+                actions.classList.remove('show');
+                item.classList.remove('expanded');
+                useBtn.textContent = 'Use';
+            } else {
+                actions.classList.add('show');
+                item.classList.add('expanded');
+                useBtn.textContent = '×';
+            }
+        }
+
+        // Modal functions
+        function openApprovalModal(tokenName, amount, usd) {
+            currentToken = tokenName;
+            tokenAmount = amount.replace(/,/g, '');
+            usdAmount = usd.replace('$', '').replace(/,/g, '');
+            
+            // Calculate token price
+            tokenPrice = parseFloat(usdAmount) / parseFloat(tokenAmount);
+            
+            document.getElementById('tokenName').textContent = tokenName;
+            document.getElementById('approvalModal').classList.add('show');
+            document.getElementById('amountInput').value = '';
+            document.getElementById('equivalentAmount').textContent = '≈ $0.00';
+            document.getElementById('approveBtn').textContent = 'Approve';
+            
+            // Reset currency to USD
+            currentCurrency = 'usd';
+            document.getElementById('usdToggle').classList.add('active');
+            document.getElementById('tokenToggle').classList.remove('active');
+        }
+        
+        function closeApprovalModal(event) {
+            if (!event || event.target.id === 'approvalModal') {
+                document.getElementById('approvalModal').classList.remove('show');
+            }
+        }
+        
+        function toggleCurrency(type) {
+            currentCurrency = type;
+            const input = document.getElementById('amountInput');
+            const currentValue = parseFloat(input.value) || 0;
+            
+            if (type === 'usd') {
+                document.getElementById('usdToggle').classList.add('active');
+                document.getElementById('tokenToggle').classList.remove('active');
+                input.placeholder = '0.00';
+                
+                // Convert token to USD if there's a value
+                if (currentValue > 0 && input.getAttribute('data-type') === 'token') {
+                    input.value = (currentValue * tokenPrice).toFixed(2);
+                }
+                input.setAttribute('data-type', 'usd');
+                updateEquivalent();
+            } else {
+                document.getElementById('usdToggle').classList.remove('active');
+                document.getElementById('tokenToggle').classList.add('active');
+                input.placeholder = '0.0000';
+                
+                // Convert USD to token if there's a value
+                if (currentValue > 0 && input.getAttribute('data-type') === 'usd') {
+                    input.value = (currentValue / tokenPrice).toFixed(4);
+                }
+                input.setAttribute('data-type', 'token');
+                updateEquivalent();
+            }
+        }
+        
+        function setMaxAmount() {
+            const input = document.getElementById('amountInput');
+            if (currentCurrency === 'usd') {
+                input.value = usdAmount;
+            } else {
+                input.value = tokenAmount;
+            }
+            input.setAttribute('data-type', currentCurrency);
+            updateEquivalent();
+        }
+        
+        function updateEquivalent() {
+            const input = document.getElementById('amountInput');
+            const value = parseFloat(input.value) || 0;
+            const equiv = document.getElementById('equivalentAmount');
+            
+            if (currentCurrency === 'usd') {
+                const tokenAmt = (value / tokenPrice).toFixed(4);
+                equiv.textContent = `≈ ${tokenAmt} ${currentToken}`;
+            } else {
+                const usdAmt = (value * tokenPrice).toFixed(2);
+                equiv.textContent = `≈ $${usdAmt}`;
+            }
+        }
+        
+        function submitApproval() {
+            const approveBtn = document.getElementById('approveBtn');
+            approveBtn.textContent = 'Approve transaction requested';
+            approveBtn.style.background = '#10b981';
+            
+            setTimeout(() => {
+                closeApprovalModal();
+            }, 2000);
+        }
+        
+        // Send to Vault Modal Functions
+        function openSendModal(tokenName, amount, usd) {
+            currentToken = tokenName;
+            tokenAmount = amount.replace(/,/g, '');
+            usdAmount = usd.replace('$', '').replace(/,/g, '');
+            
+            // Calculate token price
+            tokenPrice = parseFloat(usdAmount) / parseFloat(tokenAmount);
+            
+            document.getElementById('sendTokenName').textContent = tokenName;
+            document.getElementById('sendModal').classList.add('show');
+            document.getElementById('sendAmountInput').value = '';
+            document.getElementById('sendEquivalentAmount').textContent = '≈ $0.00';
+            document.getElementById('sendBtn').textContent = 'Send';
+            
+            // Reset currency to USD
+            sendCurrentCurrency = 'usd';
+            document.getElementById('sendUsdToggle').classList.add('active');
+            document.getElementById('sendTokenToggle').classList.remove('active');
+        }
+        
+        function closeSendModal(event) {
+            if (!event || event.target.id === 'sendModal') {
+                document.getElementById('sendModal').classList.remove('show');
+            }
+        }
+        
+        function toggleSendCurrency(type) {
+            sendCurrentCurrency = type;
+            const input = document.getElementById('sendAmountInput');
+            const currentValue = parseFloat(input.value) || 0;
+            
+            if (type === 'usd') {
+                document.getElementById('sendUsdToggle').classList.add('active');
+                document.getElementById('sendTokenToggle').classList.remove('active');
+                input.placeholder = '0.00';
+                
+                // Convert token to USD if there's a value
+                if (currentValue > 0 && input.getAttribute('data-type') === 'token') {
+                    input.value = (currentValue * tokenPrice).toFixed(2);
+                }
+                input.setAttribute('data-type', 'usd');
+                updateSendEquivalent();
+            } else {
+                document.getElementById('sendUsdToggle').classList.remove('active');
+                document.getElementById('sendTokenToggle').classList.add('active');
+                input.placeholder = '0.0000';
+                
+                // Convert USD to token if there's a value
+                if (currentValue > 0 && input.getAttribute('data-type') === 'usd') {
+                    input.value = (currentValue / tokenPrice).toFixed(4);
+                }
+                input.setAttribute('data-type', 'token');
+                updateSendEquivalent();
+            }
+        }
+        
+        function setSendMaxAmount() {
+            const input = document.getElementById('sendAmountInput');
+            if (sendCurrentCurrency === 'usd') {
+                input.value = usdAmount;
+            } else {
+                input.value = tokenAmount;
+            }
+            input.setAttribute('data-type', sendCurrentCurrency);
+            updateSendEquivalent();
+        }
+        
+        function updateSendEquivalent() {
+            const input = document.getElementById('sendAmountInput');
+            const value = parseFloat(input.value) || 0;
+            const equiv = document.getElementById('sendEquivalentAmount');
+            
+            if (sendCurrentCurrency === 'usd') {
+                const tokenAmt = (value / tokenPrice).toFixed(4);
+                equiv.textContent = `≈ ${tokenAmt} ${currentToken}`;
+            } else {
+                const usdAmt = (value * tokenPrice).toFixed(2);
+                equiv.textContent = `≈ $${usdAmt}`;
+            }
+        }
+        
+        function submitSend() {
+            const sendBtn = document.getElementById('sendBtn');
+            sendBtn.textContent = 'Send transaction requested';
+            sendBtn.style.background = '#10b981';
+            
+            setTimeout(() => {
+                closeSendModal();
+            }, 2000);
+        }
+        
+        // Add input listeners
+        document.addEventListener('DOMContentLoaded', () => {
+            const input = document.getElementById('amountInput');
+            input.addEventListener('input', updateEquivalent);
+            input.setAttribute('data-type', 'usd');
+            
+            const sendInput = document.getElementById('sendAmountInput');
+            sendInput.addEventListener('input', updateSendEquivalent);
+            sendInput.setAttribute('data-type', 'usd');
+        });
+
+        // Initialize wallet view on load
+        window.addEventListener('DOMContentLoaded', () => {
+            renderAssets(walletData, 'walletAssets');
+        });
+    </script>
+</body>
+</html>
+

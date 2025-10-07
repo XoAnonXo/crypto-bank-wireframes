@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome - Crypto Bank</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .splash-container {
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .slides {
+            height: 100%;
+            transition: transform 0.5s ease;
+        }
+        
+        .slide {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 80px 40px 200px 40px;
+            text-align: center;
+        }
+        
+        .slide-icon {
+            font-size: 100px;
+            margin-bottom: 60px;
+            margin-top: 100px;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .slide h1 {
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 1.4;
+            margin-bottom: 24px;
+            color: #1a1a1a;
+            max-width: 300px;
+        }
+        
+        .slide p {
+            font-size: 15px;
+            color: #666;
+            line-height: 1.6;
+            max-width: 280px;
+        }
+        
+        .dots {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            z-index: 10;
+        }
+        
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #e0e0e0;
+            transition: all 0.3s;
+        }
+        
+        .dot.active {
+            height: 24px;
+            border-radius: 4px;
+            background: #667eea;
+        }
+        
+        .next-btn {
+            position: fixed;
+            bottom: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 80px);
+            max-width: 295px;
+            z-index: 10;
+        }
+        
+        .skip-btn {
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: #667eea;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+    <div class="phone-container">
+        <!-- Status Bar -->
+        <div class="status-bar">
+            <div class="time">9:41</div>
+            <div class="status-icons">
+                <span>📶</span>
+                <span>📡</span>
+                <span>🔋</span>
+            </div>
+        </div>
+
+        <div class="splash-container">
+            <!-- Slides -->
+            <div class="slides" id="slides">
+                <!-- Slide 1 -->
+                <div class="slide" style="background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);">
+                    <div class="slide-icon">🏦</div>
+                    <h1>First real Magic Internet Money (MIM) Bank</h1>
+                    <p>Welcome to the future of banking where crypto meets traditional finance</p>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="slide" style="background: linear-gradient(180deg, #f0f7ff 0%, #ffffff 100%);">
+                    <div class="slide-icon">💰</div>
+                    <h1>First non-custodial bank that pays you</h1>
+                    <p>Earn rewards while keeping full control of your assets</p>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="slide" style="background: linear-gradient(180deg, #f0fdf4 0%, #ffffff 100%);">
+                    <div class="slide-icon">🔐</div>
+                    <h1>Have total control of your MIM and spending</h1>
+                    <p>Your keys, your crypto, your rules. Complete financial freedom</p>
+                </div>
+            </div>
+
+            <!-- Dots Indicator -->
+            <div class="dots">
+                <div class="dot active" id="dot0"></div>
+                <div class="dot" id="dot1"></div>
+                <div class="dot" id="dot2"></div>
+            </div>
+
+            <!-- Next Button -->
+            <button class="btn-full next-btn" id="nextBtn" onclick="nextSlide()">
+                Next
+            </button>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const totalSlides = 3;
+        const slides = document.getElementById('slides');
+        const nextBtn = document.getElementById('nextBtn');
+
+        function updateSlide() {
+            // Move slides
+            slides.style.transform = `translateY(-${currentSlide * 100}vh)`;
+            
+            // Update dots
+            for (let i = 0; i < totalSlides; i++) {
+                const dot = document.getElementById(`dot${i}`);
+                if (i === currentSlide) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            }
+            
+            // Update button text
+            if (currentSlide === totalSlides - 1) {
+                nextBtn.textContent = 'Get Started';
+            } else {
+                nextBtn.textContent = 'Next';
+            }
+        }
+
+        function nextSlide() {
+            if (currentSlide < totalSlides - 1) {
+                currentSlide++;
+                updateSlide();
+            } else {
+                goToRegister();
+            }
+        }
+
+        function goToRegister() {
+            window.location.href = 'register.html';
+        }
+
+        // Swipe support
+        let touchStartY = 0;
+        let touchEndY = 0;
+
+        slides.addEventListener('touchstart', (e) => {
+            touchStartY = e.changedTouches[0].screenY;
+        });
+
+        slides.addEventListener('touchend', (e) => {
+            touchEndY = e.changedTouches[0].screenY;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            if (touchStartY - touchEndY > 50) {
+                // Swipe up
+                nextSlide();
+            }
+        }
+    </script>
+</body>
+</html>
+

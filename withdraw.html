@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Withdraw - Crypto Bank</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="phone-container">
+        <!-- Status Bar -->
+        <div class="status-bar">
+            <div class="time">9:41</div>
+            <div class="status-icons">
+                <span>📶</span>
+                <span>📡</span>
+                <span>🔋</span>
+            </div>
+        </div>
+
+        <!-- Header -->
+        <div class="header">
+            <button class="back-btn" onclick="window.location.href='dashboard.html'">←</button>
+            <h1>Withdraw</h1>
+            <div style="width: 28px;"></div>
+        </div>
+
+        <!-- Content -->
+        <div class="content">
+            <!-- Asset Selection -->
+            <div class="card">
+                <label class="input-label">Select Asset</label>
+                <div class="list-item" style="background: #f8f9fa; cursor: pointer; margin-bottom: 0;">
+                    <div class="list-icon">$</div>
+                    <div class="list-content">
+                        <div class="list-title">liquidUSD</div>
+                        <div class="list-subtitle">Available: $12,450.00</div>
+                    </div>
+                    <div>▼</div>
+                </div>
+            </div>
+
+            <!-- Amount Input -->
+            <div class="card">
+                <label class="input-label">Withdrawal Amount</label>
+                <div style="position: relative;">
+                    <input type="text" class="input-field" placeholder="0.00" value="500.00" 
+                           style="font-size: 24px; font-weight: 600; padding-right: 80px;">
+                    <div style="position: absolute; right: 16px; top: 50%; transform: translateY(-50%); font-size: 14px; color: #666;">
+                        USD
+                    </div>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-top: 12px;">
+                    <span style="font-size: 13px; color: #666;">Available: $12,450.00</span>
+                    <span style="font-size: 13px; font-weight: 600; color: #667eea; cursor: pointer;">MAX</span>
+                </div>
+                
+                <!-- Quick Amount Buttons -->
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 12px;">
+                    <button class="btn btn-secondary" style="padding: 8px;">$100</button>
+                    <button class="btn btn-secondary" style="padding: 8px;">$500</button>
+                    <button class="btn btn-secondary" style="padding: 8px;">$1,000</button>
+                    <button class="btn btn-secondary" style="padding: 8px;">$5,000</button>
+                </div>
+            </div>
+
+            <!-- Destination Address -->
+            <div class="card">
+                <label class="input-label">Destination Wallet Address</label>
+                <input type="text" class="input-field" placeholder="0x..." 
+                       style="font-family: monospace; font-size: 13px;">
+                <div style="display: flex; gap: 8px; margin-top: 12px;">
+                    <button class="btn btn-secondary" style="flex: 1; padding: 10px; font-size: 13px;">
+                        📋 Paste
+                    </button>
+                    <button class="btn btn-secondary" style="flex: 1; padding: 10px; font-size: 13px;">
+                        📷 Scan QR
+                    </button>
+                </div>
+            </div>
+
+            <!-- Saved Addresses -->
+            <div class="card">
+                <div style="font-size: 14px; font-weight: 600; margin-bottom: 12px;">Saved Addresses</div>
+                
+                <div class="list-item" style="background: #f8f9fa; margin-bottom: 8px;">
+                    <div class="list-icon" style="background: #667eea; color: white; font-size: 16px;">🦊</div>
+                    <div class="list-content">
+                        <div class="list-title">My MetaMask</div>
+                        <div class="list-subtitle" style="font-family: monospace; font-size: 11px;">0x742d...3a91</div>
+                    </div>
+                    <div style="cursor: pointer;">✓</div>
+                </div>
+
+                <div class="list-item" style="background: #f8f9fa;">
+                    <div class="list-icon" style="background: #3375BB; color: white; font-size: 16px;">🛡️</div>
+                    <div class="list-content">
+                        <div class="list-title">Trust Wallet</div>
+                        <div class="list-subtitle" style="font-family: monospace; font-size: 11px;">0x8f45...7c21</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Transaction Summary -->
+            <div class="card" style="background: #f8f9fa;">
+                <div style="font-size: 14px; font-weight: 600; margin-bottom: 12px;">Transaction Summary</div>
+                
+                <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                    <span style="font-size: 13px; color: #666;">Amount</span>
+                    <span style="font-size: 13px; font-weight: 600;">$500.00</span>
+                </div>
+                
+                <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                    <span style="font-size: 13px; color: #666;">Network Fee</span>
+                    <span style="font-size: 13px; font-weight: 600;">$2.50</span>
+                </div>
+                
+                <div style="height: 1px; background: #e0e0e0; margin: 12px 0;"></div>
+                
+                <div style="display: flex; justify-content: space-between;">
+                    <span style="font-size: 14px; font-weight: 600;">Total</span>
+                    <span style="font-size: 16px; font-weight: 700; color: #667eea;">$502.50</span>
+                </div>
+                
+                <div style="font-size: 11px; color: #666; margin-top: 8px; line-height: 1.4;">
+                    ⚡ Estimated arrival: ~2-5 minutes
+                </div>
+            </div>
+
+            <button class="btn-full" style="margin-top: 8px;">
+                Confirm Withdrawal
+            </button>
+
+            <div style="background: #fff7ed; border-left: 4px solid #f59e0b; padding: 12px; border-radius: 12px; margin-top: 16px;">
+                <div style="font-size: 11px; color: #92400e; line-height: 1.5;">
+                    ⚠️ Please verify the destination address carefully. Withdrawals cannot be reversed once confirmed.
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Navigation -->
+        <div class="bottom-nav">
+            <div class="nav-item" onclick="window.location.href='dashboard.html'">
+                <div class="nav-icon">🏠</div>
+                <div>Home</div>
+            </div>
+            <div class="nav-item" onclick="window.location.href='transactions.html'">
+                <div class="nav-icon">📊</div>
+                <div>Activity</div>
+            </div>
+            <div class="nav-item" onclick="window.location.href='earn.html'">
+                <div class="nav-icon">💰</div>
+                <div>Earn</div>
+            </div>
+            <div class="nav-item" onclick="window.location.href='cards.html'">
+                <div class="nav-icon">💳</div>
+                <div>Card</div>
+            </div>
+            <div class="nav-item" onclick="window.location.href='menu.html'">
+                <div class="nav-icon">⚙️</div>
+                <div>More</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transactions - Crypto Bank</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="phone-container">
+        <!-- Status Bar -->
+        <div class="status-bar">
+            <div class="time">9:41</div>
+            <div class="status-icons">
+                <span>📶</span>
+                <span>📡</span>
+                <span>🔋</span>
+            </div>
+        </div>
+
+        <!-- Header -->
+        <div class="header">
+            <div class="header-icon" onclick="window.location.href='menu.html'">☰</div>
+            <h1>Activity</h1>
+            <div class="header-icon">🔍</div>
+        </div>
+
+        <!-- Content -->
+        <div class="content">
+            <!-- Filter Tabs -->
+            <div class="tabs">
+                <div class="tab active">All</div>
+                <div class="tab">Vault</div>
+                <div class="tab">Card</div>
+            </div>
+
+            <!-- Date Filter -->
+            <div style="display: flex; gap: 8px; margin-bottom: 16px;">
+                <button class="btn btn-secondary" style="flex: 1; padding: 10px; font-size: 13px;">
+                    📅 This Month
+                </button>
+                <button class="btn btn-secondary" style="padding: 10px 16px; font-size: 13px;">
+                    ⚙️
+                </button>
+            </div>
+
+            <!-- Today -->
+            <div style="font-size: 12px; font-weight: 600; color: #999; text-transform: uppercase; margin: 20px 0 12px 4px;">Today</div>
+
+            <div class="card">
+                <div style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #f0f0f0;">
+                    <div style="display: flex; gap: 12px; flex: 1;">
+                        <div style="width: 40px; height: 40px; background: #f0f7ff; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px;">🛒</div>
+                        <div style="flex: 1;">
+                            <div style="font-size: 14px; font-weight: 600; margin-bottom: 2px;">Amazon</div>
+                            <div style="font-size: 12px; color: #666;">Card • 2:34 PM</div>
+                        </div>
+                    </div>
+                    <div style="text-align: right;">
+                        <div style="font-size: 15px; font-weight: 600; color: #ef4444;">-$89.99</div>
+                        <div style="font-size: 11px; color: #10b981;">+1.8 pts</div>
+                    </div>
+                </div>
+
+                <div style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #f0f0f0;">
+                    <div style="display: flex; gap: 12px; flex: 1;">
+                        <div style="width: 40px; height: 40px; background: #f0fdf4; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px;">📥</div>
+                        <div style="flex: 1;">
+                            <div style="font-size: 14px; font-weight: 600; margin-bottom: 2px;">Deposit from MetaMask</div>
+                            <div style="font-size: 12px; color: #666;">Vault • 10:15 AM</div>
+                        </div>
+                    </div>
+                    <div style="text-align: right;">
+                        <div style="font-size: 15px; font-weight: 600; color: #10b981;">+$5,000.00</div>
+                        <div style="font-size: 11px; color: #666;">USDC</div>
+                    </div>
+                </div>
+
+                <div style="display: flex; justify-content: space-between; padding: 12px 0;">
+                    <div style="display: flex; gap: 12px; flex: 1;">
+                        <div style="width: 40px; height: 40px; background: #fef3c7; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px;">☕</div>
+                        <div style="flex: 1;">
+                            <div style="font-size: 14px; font-weight: 600; margin-bottom: 2px;">Starbucks</div>
+                            <div style="font-size: 12px; color: #666;">Card • 9:15 AM</div>
+                        </div>
+                    </div>
+                    <div style="text-align: right;">
+                        <div style="font-size: 15px; font-weight: 600; color: #ef4444;">-$6.75</div>
+                        <div style="font-size: 11px; color: #10b981;">+0.1 pts</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Yesterday -->
+            <div style="font-size: 12px; font-weight: 600; color: #999; text-transform: uppercase; margin: 20px 0 12px 4px;">Yesterday</div>
+
+            <div class="card">
+                <div style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #f0f0f0;">
+                    <div style="display: flex; gap: 12px; flex: 1;">
+                        <div style="width: 40px; height: 40px; background: #f0f7ff; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px;">⛽</div>
+                        <div style="flex: 1;">
+                            <div style="font-size: 14px; font-weight: 600; margin-bottom: 2px;">Shell Gas Station</div>
+                            <div style="font-size: 12px; color: #666;">Card • 6:45 PM</div>
+                        </div>
+                    </div>
+                    <div style="text-align: right;">
+                        <div style="font-size: 15px; font-weight: 600; color: #ef4444;">-$45.00</div>
+                        <div style="font-size: 11px; color: #10b981;">+0.9 pts</div>
+                    </div>
+                </div>
+
+                <div style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #f0f0f0;">
+                    <div style="display: flex; gap: 12px; flex: 1;">
+                        <div style="width: 40px; height: 40px; background: #fef3c7; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px;">🍕</div>
+                        <div style="flex: 1;">
+                            <div style="font-size: 14px; font-weight: 600; margin-bottom: 2px;">Pizza Hut</div>
+                            <div style="font-size: 12px; color: #666;">Card • 1:20 PM</div>
+                        </div>
+                    </div>
+                    <div style="text-align: right;">
+                        <div style="font-size: 15px; font-weight: 600; color: #ef4444;">-$32.50</div>
+                        <div style="font-size: 11px; color: #10b981;">+0.7 pts</div>
+                    </div>
+                </div>
+
+                <div style="display: flex; justify-content: space-between; padding: 12px 0;">
+                    <div style="display: flex; gap: 12px; flex: 1;">
+                        <div style="width: 40px; height: 40px; background: #fef3c7; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px;">📈</div>
+                        <div style="flex: 1;">
+                            <div style="font-size: 14px; font-weight: 600; margin-bottom: 2px;">Earn Interest</div>
+                            <div style="font-size: 12px; color: #666;">Vault • 12:00 AM</div>
+                        </div>
+                    </div>
+                    <div style="text-align: right;">
+                        <div style="font-size: 15px; font-weight: 600; color: #10b981;">+$21.34</div>
+                        <div style="font-size: 11px; color: #666;">Interest</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- This Week -->
+            <div style="font-size: 12px; font-weight: 600; color: #999; text-transform: uppercase; margin: 20px 0 12px 4px;">Earlier This Week</div>
+
+            <div class="card">
+                <div style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #f0f0f0;">
+                    <div style="display: flex; gap: 12px; flex: 1;">
+                        <div style="width: 40px; height: 40px; background: #fef2f2; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px;">📤</div>
+                        <div style="flex: 1;">
+                            <div style="font-size: 14px; font-weight: 600; margin-bottom: 2px;">Withdraw to Trust Wallet</div>
+                            <div style="font-size: 12px; color: #666;">Vault • Oct 3</div>
+                        </div>
+                    </div>
+                    <div style="text-align: right;">
+                        <div style="font-size: 15px; font-weight: 600; color: #ef4444;">-$1,000.00</div>
+                        <div style="font-size: 11px; color: #666;">ETH</div>
+                    </div>
+                </div>
+
+                <div style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #f0f0f0;">
+                    <div style="display: flex; gap: 12px; flex: 1;">
+                        <div style="width: 40px; height: 40px; background: #f0f7ff; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px;">🏨</div>
+                        <div style="flex: 1;">
+                            <div style="font-size: 14px; font-weight: 600; margin-bottom: 2px;">Hotel Booking</div>
+                            <div style="font-size: 12px; color: #666;">Card • Oct 2</div>
+                        </div>
+                    </div>
+                    <div style="text-align: right;">
+                        <div style="font-size: 15px; font-weight: 600; color: #ef4444;">-$485.00</div>
+                        <div style="font-size: 11px; color: #10b981;">+9.7 pts</div>
+                    </div>
+                </div>
+
+                <div style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #f0f0f0;">
+                    <div style="display: flex; gap: 12px; flex: 1;">
+                        <div style="width: 40px; height: 40px; background: #f0fdf4; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px;">🏦</div>
+                        <div style="flex: 1;">
+                            <div style="font-size: 14px; font-weight: 600; margin-bottom: 2px;">Bank Transfer (ACH)</div>
+                            <div style="font-size: 12px; color: #666;">Vault • Oct 1</div>
+                        </div>
+                    </div>
+                    <div style="text-align: right;">
+                        <div style="font-size: 15px; font-weight: 600; color: #10b981;">+$2,500.00</div>
+                        <div style="font-size: 11px; color: #666;">USD</div>
+                    </div>
+                </div>
+
+                <div style="display: flex; justify-content: space-between; padding: 12px 0;">
+                    <div style="display: flex; gap: 12px; flex: 1;">
+                        <div style="width: 40px; height: 40px; background: #f0f7ff; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px;">🎬</div>
+                        <div style="flex: 1;">
+                            <div style="font-size: 14px; font-weight: 600; margin-bottom: 2px;">Netflix</div>
+                            <div style="font-size: 12px; color: #666;">Card • Oct 1</div>
+                        </div>
+                    </div>
+                    <div style="text-align: right;">
+                        <div style="font-size: 15px; font-weight: 600; color: #ef4444;">-$15.99</div>
+                        <div style="font-size: 11px; color: #10b981;">+0.3 pts</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Summary Card -->
+            <div class="card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; margin-top: 20px;">
+                <div style="text-align: center; padding: 12px 0;">
+                    <div style="font-size: 13px; opacity: 0.9; margin-bottom: 8px;">This Month Summary</div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                        <div>
+                            <div style="font-size: 20px; font-weight: 700; margin-bottom: 2px;">+$7,543</div>
+                            <div style="font-size: 12px; opacity: 0.85;">Income</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 20px; font-weight: 700; margin-bottom: 2px;">-$3,892</div>
+                            <div style="font-size: 12px; opacity: 0.85;">Expenses</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Floating Bottom Navigation -->
+        <div style="position: absolute; bottom: 20px; left: 20px; right: 20px; background: rgba(26, 26, 26, 0.95); backdrop-filter: blur(10px); border-radius: 24px; padding: 12px 8px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3); display: flex; justify-content: space-around; align-items: center; z-index: 100;">
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; cursor: pointer; color: #999;" onclick="window.location.href='dashboard.html'">
+                <div style="font-size: 22px;">🏠</div>
+                <div style="font-size: 10px; font-weight: 500;">Home</div>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; cursor: pointer; color: #999;" onclick="window.location.href='loans.html'">
+                <div style="font-size: 22px;">🏦</div>
+                <div style="font-size: 10px; font-weight: 500;">Loans</div>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; cursor: pointer; color: #fff;" onclick="window.location.href='transactions.html'">
+                <div style="font-size: 22px;">📊</div>
+                <div style="font-size: 10px; font-weight: 600;">Activity</div>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; cursor: pointer; color: #999;" onclick="window.location.href='earn.html'">
+                <div style="font-size: 22px;">💰</div>
+                <div style="font-size: 10px; font-weight: 500;">Earn</div>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; cursor: pointer; color: #999;" onclick="window.location.href='menu.html'">
+                <div style="font-size: 22px;">⋮⋮</div>
+                <div style="font-size: 10px; font-weight: 500;">More</div>
+            </div>
+            <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 12px rgba(168, 85, 247, 0.4);">
+                <div style="font-size: 24px;">🛒</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+

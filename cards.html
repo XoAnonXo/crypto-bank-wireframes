@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card - Crypto Bank</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="phone-container">
+        <!-- Status Bar -->
+        <div class="status-bar">
+            <div class="time">9:41</div>
+            <div class="status-icons">
+                <span>📶</span>
+                <span>📡</span>
+                <span>🔋</span>
+            </div>
+        </div>
+
+        <!-- Header -->
+        <div class="header">
+            <div class="header-icon" onclick="window.location.href='menu.html'">☰</div>
+            <h1>Card</h1>
+            <div class="header-icon">⚙️</div>
+        </div>
+
+        <!-- Content -->
+        <div class="content">
+            <!-- Virtual Card Display -->
+            <div style="perspective: 1000px; margin-bottom: 20px;">
+                <div style="background: linear-gradient(135deg, #1e293b 0%, #334155 100%); border-radius: 20px; padding: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.2); position: relative; overflow: hidden;">
+                    <!-- Card Pattern -->
+                    <div style="position: absolute; top: -50%; right: -20%; width: 200px; height: 200px; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); border-radius: 50%;"></div>
+                    
+                    <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 40px;">
+                        <div style="color: white; font-size: 14px; font-weight: 600;">Crypto Bank</div>
+                        <div style="color: white; font-size: 12px;">💳 Virtual</div>
+                    </div>
+                    
+                    <div style="color: white; font-family: 'Courier New', monospace; font-size: 18px; letter-spacing: 2px; margin-bottom: 20px;">
+                        •••• •••• •••• 4892
+                    </div>
+                    
+                    <div style="display: flex; justify-content: space-between; align-items: end;">
+                        <div>
+                            <div style="color: rgba(255,255,255,0.6); font-size: 10px; margin-bottom: 4px;">CARDHOLDER</div>
+                            <div style="color: white; font-size: 14px; font-weight: 600;">JOHN DOE</div>
+                        </div>
+                        <div>
+                            <div style="color: rgba(255,255,255,0.6); font-size: 10px; margin-bottom: 4px;">EXPIRES</div>
+                            <div style="color: white; font-size: 14px; font-weight: 600;">12/27</div>
+                        </div>
+                        <div style="color: white; font-size: 24px; font-weight: 700;">VISA</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card Status -->
+            <div class="card">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                    <div style="font-size: 16px; font-weight: 600;">Card Status</div>
+                    <span class="badge badge-success">Active</span>
+                </div>
+                <div style="display: flex; gap: 12px;">
+                    <button class="btn btn-secondary" style="flex: 1;">
+                        👁️ Show Details
+                    </button>
+                    <button class="btn btn-secondary" style="flex: 1; color: #ef4444;">
+                        ❄️ Freeze Card
+                    </button>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="card">
+                <div style="font-size: 16px; font-weight: 600; margin-bottom: 12px;">Quick Actions</div>
+                
+                <div class="list-item" onclick="window.location.href='spending-limits.html'">
+                    <div class="list-icon">🎯</div>
+                    <div class="list-content">
+                        <div class="list-title">Spending Limits</div>
+                        <div class="list-subtitle">Daily: $2,500 / Monthly: $10,000</div>
+                    </div>
+                    <div>→</div>
+                </div>
+
+                <div class="list-item">
+                    <div class="list-icon">🔐</div>
+                    <div class="list-content">
+                        <div class="list-title">Security Settings</div>
+                        <div class="list-subtitle">PIN, online payments, ATM</div>
+                    </div>
+                    <div>→</div>
+                </div>
+
+                <div class="list-item">
+                    <div class="list-icon">📍</div>
+                    <div class="list-content">
+                        <div class="list-title">Card Locations</div>
+                        <div class="list-subtitle">Manage where your card works</div>
+                    </div>
+                    <div>→</div>
+                </div>
+
+                <div class="list-item">
+                    <div class="list-icon">🔔</div>
+                    <div class="list-content">
+                        <div class="list-title">Notifications</div>
+                        <div class="list-subtitle">Transaction alerts</div>
+                    </div>
+                    <div>→</div>
+                </div>
+            </div>
+
+            <!-- Monthly Spending -->
+            <div class="card">
+                <div class="card-header">
+                    <div style="font-size: 16px; font-weight: 600;">This Month's Spending</div>
+                    <div style="font-size: 18px; font-weight: 700; color: #667eea;">$3,247.89</div>
+                </div>
+                
+                <div style="margin: 16px 0;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                        <span style="font-size: 13px; color: #666;">Daily limit used</span>
+                        <span style="font-size: 13px; font-weight: 600;">$845 / $2,500</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 33.8%;"></div>
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px;">
+                    <div style="background: #f8f9fa; padding: 12px; border-radius: 12px; text-align: center;">
+                        <div style="font-size: 20px; margin-bottom: 4px;">🛒</div>
+                        <div style="font-size: 12px; color: #666; margin-bottom: 2px;">Shopping</div>
+                        <div style="font-size: 14px; font-weight: 600;">$1,234</div>
+                    </div>
+                    <div style="background: #f8f9fa; padding: 12px; border-radius: 12px; text-align: center;">
+                        <div style="font-size: 20px; margin-bottom: 4px;">🍽️</div>
+                        <div style="font-size: 12px; color: #666; margin-bottom: 2px;">Dining</div>
+                        <div style="font-size: 14px; font-weight: 600;">$856</div>
+                    </div>
+                    <div style="background: #f8f9fa; padding: 12px; border-radius: 12px; text-align: center;">
+                        <div style="font-size: 20px; margin-bottom: 4px;">✈️</div>
+                        <div style="font-size: 12px; color: #666; margin-bottom: 2px;">Travel</div>
+                        <div style="font-size: 14px; font-weight: 600;">$789</div>
+                    </div>
+                    <div style="background: #f8f9fa; padding: 12px; border-radius: 12px; text-align: center;">
+                        <div style="font-size: 20px; margin-bottom: 4px;">🎮</div>
+                        <div style="font-size: 12px; color: #666; margin-bottom: 2px;">Entertainment</div>
+                        <div style="font-size: 14px; font-weight: 600;">$368</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Transactions -->
+            <div class="card">
+                <div class="card-header">
+                    <div style="font-size: 16px; font-weight: 600;">Recent Transactions</div>
+                    <a href="transactions.html" style="color: #667eea; font-size: 14px; text-decoration: none; font-weight: 600;">All →</a>
+                </div>
+
+                <div style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #f0f0f0;">
+                    <div style="display: flex; gap: 12px;">
+                        <div style="width: 36px; height: 36px; background: #f8f9fa; border-radius: 8px; display: flex; align-items: center; justify-content: center;">🛒</div>
+                        <div>
+                            <div style="font-size: 14px; font-weight: 600;">Amazon</div>
+                            <div style="font-size: 12px; color: #666;">Today, 2:34 PM</div>
+                        </div>
+                    </div>
+                    <div style="text-align: right;">
+                        <div style="font-size: 14px; font-weight: 600;">-$89.99</div>
+                        <div style="font-size: 12px; color: #10b981;">+1.8 pts</div>
+                    </div>
+                </div>
+
+                <div style="display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #f0f0f0;">
+                    <div style="display: flex; gap: 12px;">
+                        <div style="width: 36px; height: 36px; background: #f8f9fa; border-radius: 8px; display: flex; align-items: center; justify-content: center;">🍽️</div>
+                        <div>
+                            <div style="font-size: 14px; font-weight: 600;">Starbucks</div>
+                            <div style="font-size: 12px; color: #666;">Today, 9:15 AM</div>
+                        </div>
+                    </div>
+                    <div style="text-align: right;">
+                        <div style="font-size: 14px; font-weight: 600;">-$6.75</div>
+                        <div style="font-size: 12px; color: #10b981;">+0.1 pts</div>
+                    </div>
+                </div>
+
+                <div style="display: flex; justify-content: space-between; padding: 12px 0;">
+                    <div style="display: flex; gap: 12px;">
+                        <div style="width: 36px; height: 36px; background: #f8f9fa; border-radius: 8px; display: flex; align-items: center; justify-content: center;">⛽</div>
+                        <div>
+                            <div style="font-size: 14px; font-weight: 600;">Shell Gas Station</div>
+                            <div style="font-size: 12px; color: #666;">Yesterday</div>
+                        </div>
+                    </div>
+                    <div style="text-align: right;">
+                        <div style="font-size: 14px; font-weight: 600;">-$45.00</div>
+                        <div style="font-size: 12px; color: #10b981;">+0.9 pts</div>
+                    </div>
+                </div>
+            </div>
+
+            <button class="btn btn-secondary" style="width: 100%; margin-top: 8px;">
+                📄 Request Physical Card
+            </button>
+        </div>
+
+        <!-- Floating Bottom Navigation -->
+        <div style="position: absolute; bottom: 20px; left: 20px; right: 20px; background: rgba(26, 26, 26, 0.95); backdrop-filter: blur(10px); border-radius: 24px; padding: 12px 8px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3); display: flex; justify-content: space-around; align-items: center; z-index: 100;">
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; cursor: pointer; color: #999;" onclick="window.location.href='dashboard.html'">
+                <div style="font-size: 22px;">🏠</div>
+                <div style="font-size: 10px; font-weight: 500;">Home</div>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; cursor: pointer; color: #999;" onclick="window.location.href='loans.html'">
+                <div style="font-size: 22px;">🏦</div>
+                <div style="font-size: 10px; font-weight: 500;">Loans</div>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; cursor: pointer; color: #999;" onclick="window.location.href='transactions.html'">
+                <div style="font-size: 22px;">📊</div>
+                <div style="font-size: 10px; font-weight: 500;">Activity</div>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; cursor: pointer; color: #999;" onclick="window.location.href='earn.html'">
+                <div style="font-size: 22px;">💰</div>
+                <div style="font-size: 10px; font-weight: 500;">Earn</div>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; cursor: pointer; color: #999;" onclick="window.location.href='menu.html'">
+                <div style="font-size: 22px;">⋮⋮</div>
+                <div style="font-size: 10px; font-weight: 500;">More</div>
+            </div>
+            <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 12px rgba(168, 85, 247, 0.4);">
+                <div style="font-size: 24px;">🛒</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+

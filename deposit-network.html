@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Network - Crypto Bank</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="phone-container">
+        <!-- Status Bar -->
+        <div class="status-bar">
+            <div class="time">9:41</div>
+            <div class="status-icons">
+                <span>📶</span>
+                <span>📡</span>
+                <span>🔋</span>
+            </div>
+        </div>
+
+        <!-- Header -->
+        <div class="header">
+            <button class="back-btn" onclick="window.location.href='deposit-select.html'">←</button>
+            <h1 id="currencyTitle">Select Network</h1>
+            <div style="width: 28px;"></div>
+        </div>
+
+        <!-- Content -->
+        <div class="content">
+            <div style="text-align: center; margin-bottom: 24px;">
+                <div id="currencyIcon" style="width: 64px; height: 64px; background: #627eea; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 32px; font-weight: 700; margin: 0 auto 12px;">Ξ</div>
+                <h2 style="font-size: 20px; margin-bottom: 8px;" id="currencyName">Ethereum</h2>
+                <p style="color: #666; font-size: 14px;">
+                    Select network to receive on
+                </p>
+            </div>
+
+            <!-- Networks List -->
+            <div style="font-size: 14px; font-weight: 600; margin-bottom: 12px; color: #1a1a1a;">Available Networks</div>
+
+            <div class="list-item" style="margin-bottom: 8px;" onclick="showDepositAddress('Ethereum', 'ERC-20')">
+                <div style="width: 40px; height: 40px; background: #627eea; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 14px;">ETH</div>
+                <div style="flex: 1;">
+                    <div style="font-size: 15px; font-weight: 600;">Ethereum</div>
+                    <div style="font-size: 12px; color: #666;">ERC-20 • ~2-5 min • Fee: ~$5</div>
+                </div>
+                <div>→</div>
+            </div>
+
+            <div class="list-item" style="margin-bottom: 8px;" onclick="showDepositAddress('Arbitrum', 'Arbitrum One')">
+                <div style="width: 40px; height: 40px; background: #28a0f0; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 14px;">ARB</div>
+                <div style="flex: 1;">
+                    <div style="font-size: 15px; font-weight: 600;">Arbitrum One</div>
+                    <div style="font-size: 12px; color: #666;">Layer 2 • ~1 min • Fee: ~$0.50</div>
+                </div>
+                <div>→</div>
+            </div>
+
+            <div class="list-item" style="margin-bottom: 8px;" onclick="showDepositAddress('Optimism', 'OP Mainnet')">
+                <div style="width: 40px; height: 40px; background: #ff0420; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 14px;">OP</div>
+                <div style="flex: 1;">
+                    <div style="font-size: 15px; font-weight: 600;">Optimism</div>
+                    <div style="font-size: 12px; color: #666;">Layer 2 • ~1 min • Fee: ~$0.50</div>
+                </div>
+                <div>→</div>
+            </div>
+
+            <div class="list-item" style="margin-bottom: 8px;" onclick="showDepositAddress('Polygon', 'Polygon PoS')">
+                <div style="width: 40px; height: 40px; background: #8247e5; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 14px;">⬡</div>
+                <div style="flex: 1;">
+                    <div style="font-size: 15px; font-weight: 600;">Polygon</div>
+                    <div style="font-size: 12px; color: #666;">PoS • ~30 sec • Fee: ~$0.01</div>
+                </div>
+                <div>→</div>
+            </div>
+
+            <div class="list-item" style="margin-bottom: 8px;" onclick="showDepositAddress('Base', 'Base')">
+                <div style="width: 40px; height: 40px; background: #0052FF; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 14px;">B</div>
+                <div style="flex: 1;">
+                    <div style="font-size: 15px; font-weight: 600;">Base</div>
+                    <div style="font-size: 12px; color: #666;">Layer 2 • ~1 min • Fee: ~$0.10</div>
+                </div>
+                <div>→</div>
+            </div>
+
+            <!-- Warning -->
+            <div style="background: #fff7ed; border-left: 4px solid #f59e0b; padding: 16px; border-radius: 12px; margin-top: 24px; margin-bottom: 100px;">
+                <div style="font-size: 13px; font-weight: 600; margin-bottom: 4px; color: #92400e;">⚠️ Important</div>
+                <div style="font-size: 12px; color: #92400e; line-height: 1.5;">
+                    Make sure to select the correct network. Sending to the wrong network may result in permanent loss of funds.
+                </div>
+            </div>
+        </div>
+
+        <!-- Floating Bottom Navigation -->
+        <div style="position: absolute; bottom: 20px; left: 20px; right: 20px; background: rgba(26, 26, 26, 0.95); backdrop-filter: blur(10px); border-radius: 24px; padding: 12px 8px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3); display: flex; justify-content: space-around; align-items: center; z-index: 100;">
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; cursor: pointer; color: #999;" onclick="window.location.href='dashboard.html'">
+                <div style="font-size: 22px;">🏠</div>
+                <div style="font-size: 10px; font-weight: 500;">Home</div>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; cursor: pointer; color: #999;" onclick="window.location.href='loans.html'">
+                <div style="font-size: 22px;">🏦</div>
+                <div style="font-size: 10px; font-weight: 500;">Loans</div>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; cursor: pointer; color: #999;" onclick="window.location.href='transactions.html'">
+                <div style="font-size: 22px;">📊</div>
+                <div style="font-size: 10px; font-weight: 500;">Activity</div>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; cursor: pointer; color: #999;" onclick="window.location.href='earn.html'">
+                <div style="font-size: 22px;">💰</div>
+                <div style="font-size: 10px; font-weight: 500;">Earn</div>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; cursor: pointer; color: #999;" onclick="window.location.href='menu.html'">
+                <div style="font-size: 22px;">⋮⋮</div>
+                <div style="font-size: 10px; font-weight: 500;">More</div>
+            </div>
+            <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 12px rgba(168, 85, 247, 0.4);">
+                <div style="font-size: 24px;">🛒</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Get currency from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const currency = urlParams.get('currency') || 'ETH';
+
+        // Update page based on currency
+        const currencyData = {
+            'ETH': { name: 'Ethereum', icon: 'Ξ', color: '#627eea' },
+            'USDC': { name: 'USD Coin', icon: '$', color: '#2775ca' },
+            'BTC': { name: 'Bitcoin', icon: '₿', color: '#f7931a' },
+            'USDT': { name: 'Tether', icon: '₮', color: '#26a17b' },
+            'BNB': { name: 'Binance Coin', icon: 'B', color: '#f3ba2f' },
+            'SOL': { name: 'Solana', icon: '◎', color: '#9945FF' },
+            'MATIC': { name: 'Polygon', icon: '⬡', color: '#8247e5' },
+            'AVAX': { name: 'Avalanche', icon: 'A', color: '#e84142' },
+        };
+
+        const data = currencyData[currency] || currencyData['ETH'];
+        
+        document.getElementById('currencyName').textContent = data.name;
+        document.getElementById('currencyIcon').textContent = data.icon;
+        document.getElementById('currencyIcon').style.background = data.color;
+
+        function showDepositAddress(network, networkName) {
+            alert(`Deposit Address for ${data.name} on ${networkName}:\n\n0x742d35Cc6634C0532925a3b844Bc9e3a91\n\nNetwork: ${networkName}\nMin deposit: 0.001 ${currency}\nConfirmations: 12 blocks`);
+        }
+    </script>
+</body>
+</html>
+
+
+
+

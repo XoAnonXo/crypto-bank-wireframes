@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Deposit - Crypto Bank</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="phone-container">
+        <!-- Status Bar -->
+        <div class="status-bar">
+            <div class="time">9:41</div>
+            <div class="status-icons">
+                <span>📶</span>
+                <span>📡</span>
+                <span>🔋</span>
+            </div>
+        </div>
+
+        <!-- Header -->
+        <div class="header">
+            <button class="back-btn" onclick="window.location.href='approve-spending.html'">←</button>
+            <h1>Select Currency</h1>
+            <div style="width: 28px;"></div>
+        </div>
+
+        <!-- Content -->
+        <div class="content">
+            <div style="text-align: center; margin-bottom: 24px;">
+                <div style="font-size: 48px; margin-bottom: 12px;">💰</div>
+                <h2 style="font-size: 20px; margin-bottom: 8px;">Deposit to Vault</h2>
+                <p style="color: #666; font-size: 14px;">
+                    Select currency and network
+                </p>
+            </div>
+
+            <!-- Popular Currencies -->
+            <div style="font-size: 14px; font-weight: 600; margin-bottom: 12px; color: #1a1a1a;">Popular</div>
+
+            <div class="list-item" style="margin-bottom: 8px;" onclick="selectCurrency('ETH')">
+                <div style="width: 40px; height: 40px; background: #627eea; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 18px;">Ξ</div>
+                <div style="flex: 1;">
+                    <div style="font-size: 15px; font-weight: 600;">Ethereum</div>
+                    <div style="font-size: 12px; color: #666;">ETH</div>
+                </div>
+                <div>→</div>
+            </div>
+
+            <div class="list-item" style="margin-bottom: 8px;" onclick="selectCurrency('USDC')">
+                <div style="width: 40px; height: 40px; background: #2775ca; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 18px;">$</div>
+                <div style="flex: 1;">
+                    <div style="font-size: 15px; font-weight: 600;">USD Coin</div>
+                    <div style="font-size: 12px; color: #666;">USDC</div>
+                </div>
+                <div>→</div>
+            </div>
+
+            <div class="list-item" style="margin-bottom: 8px;" onclick="selectCurrency('BTC')">
+                <div style="width: 40px; height: 40px; background: #f7931a; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 18px;">₿</div>
+                <div style="flex: 1;">
+                    <div style="font-size: 15px; font-weight: 600;">Bitcoin</div>
+                    <div style="font-size: 12px; color: #666;">BTC</div>
+                </div>
+                <div>→</div>
+            </div>
+
+            <div class="list-item" style="margin-bottom: 24px;" onclick="selectCurrency('USDT')">
+                <div style="width: 40px; height: 40px; background: #26a17b; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 18px;">₮</div>
+                <div style="flex: 1;">
+                    <div style="font-size: 15px; font-weight: 600;">Tether</div>
+                    <div style="font-size: 12px; color: #666;">USDT</div>
+                </div>
+                <div>→</div>
+            </div>
+
+            <!-- All Currencies -->
+            <div style="font-size: 14px; font-weight: 600; margin-bottom: 12px; color: #1a1a1a;">All Currencies</div>
+
+            <div class="list-item" style="margin-bottom: 8px;" onclick="selectCurrency('BNB')">
+                <div style="width: 40px; height: 40px; background: #f3ba2f; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 18px;">B</div>
+                <div style="flex: 1;">
+                    <div style="font-size: 15px; font-weight: 600;">Binance Coin</div>
+                    <div style="font-size: 12px; color: #666;">BNB</div>
+                </div>
+                <div>→</div>
+            </div>
+
+            <div class="list-item" style="margin-bottom: 8px;" onclick="selectCurrency('SOL')">
+                <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #9945FF 0%, #14F195 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 18px;">◎</div>
+                <div style="flex: 1;">
+                    <div style="font-size: 15px; font-weight: 600;">Solana</div>
+                    <div style="font-size: 12px; color: #666;">SOL</div>
+                </div>
+                <div>→</div>
+            </div>
+
+            <div class="list-item" style="margin-bottom: 8px;" onclick="selectCurrency('MATIC')">
+                <div style="width: 40px; height: 40px; background: #8247e5; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 18px;">⬡</div>
+                <div style="flex: 1;">
+                    <div style="font-size: 15px; font-weight: 600;">Polygon</div>
+                    <div style="font-size: 12px; color: #666;">MATIC</div>
+                </div>
+                <div>→</div>
+            </div>
+
+            <div class="list-item" style="margin-bottom: 8px;" onclick="selectCurrency('AVAX')">
+                <div style="width: 40px; height: 40px; background: #e84142; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 18px;">A</div>
+                <div style="flex: 1;">
+                    <div style="font-size: 15px; font-weight: 600;">Avalanche</div>
+                    <div style="font-size: 12px; color: #666;">AVAX</div>
+                </div>
+                <div>→</div>
+            </div>
+
+            <!-- Info -->
+            <div style="background: #dbeafe; padding: 16px; border-radius: 12px; margin-top: 24px; margin-bottom: 100px;">
+                <div style="font-size: 13px; font-weight: 600; margin-bottom: 4px; color: #1e40af;">💡 Multi-Chain Support</div>
+                <div style="font-size: 12px; color: #1e40af; line-height: 1.5;">
+                    After selecting a currency, you'll choose which blockchain network to receive on. Each network has different fees and confirmation times.
+                </div>
+            </div>
+        </div>
+
+        <!-- Floating Bottom Navigation -->
+        <div style="position: absolute; bottom: 20px; left: 20px; right: 20px; background: rgba(26, 26, 26, 0.95); backdrop-filter: blur(10px); border-radius: 24px; padding: 12px 8px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3); display: flex; justify-content: space-around; align-items: center; z-index: 100;">
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; cursor: pointer; color: #999;" onclick="window.location.href='dashboard.html'">
+                <div style="font-size: 22px;">🏠</div>
+                <div style="font-size: 10px; font-weight: 500;">Home</div>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; cursor: pointer; color: #999;" onclick="window.location.href='loans.html'">
+                <div style="font-size: 22px;">🏦</div>
+                <div style="font-size: 10px; font-weight: 500;">Loans</div>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; cursor: pointer; color: #999;" onclick="window.location.href='transactions.html'">
+                <div style="font-size: 22px;">📊</div>
+                <div style="font-size: 10px; font-weight: 500;">Activity</div>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; cursor: pointer; color: #999;" onclick="window.location.href='earn.html'">
+                <div style="font-size: 22px;">💰</div>
+                <div style="font-size: 10px; font-weight: 500;">Earn</div>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; cursor: pointer; color: #999;" onclick="window.location.href='menu.html'">
+                <div style="font-size: 22px;">⋮⋮</div>
+                <div style="font-size: 10px; font-weight: 500;">More</div>
+            </div>
+            <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 12px rgba(168, 85, 247, 0.4);">
+                <div style="font-size: 24px;">🛒</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function selectCurrency(currency) {
+            window.location.href = 'deposit-network.html?currency=' + currency;
+        }
+    </script>
+</body>
+</html>
+
+
+
+

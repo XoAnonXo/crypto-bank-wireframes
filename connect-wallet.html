@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect Wallet - Crypto Bank</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="phone-container">
+        <!-- Status Bar -->
+        <div class="status-bar">
+            <div class="time">9:41</div>
+            <div class="status-icons">
+                <span>📶</span>
+                <span>📡</span>
+                <span>🔋</span>
+            </div>
+        </div>
+
+        <!-- Header -->
+        <div class="header">
+            <button class="back-btn" onclick="window.location.href='menu.html'">←</button>
+            <h1>Connect Wallet</h1>
+            <div style="width: 28px;"></div>
+        </div>
+
+        <!-- Content -->
+        <div class="content">
+            <div style="text-align: center; margin-bottom: 24px;">
+                <div style="font-size: 48px; margin-bottom: 12px;">🔗</div>
+                <h2 style="font-size: 20px; margin-bottom: 8px;">Connect Your Wallet</h2>
+                <p style="color: #666; font-size: 14px; line-height: 1.5;">
+                    Link your external crypto wallets to easily transfer assets to and from your vault.
+                </p>
+            </div>
+
+            <!-- Connected Wallets -->
+            <div style="font-size: 12px; color: #999; margin-bottom: 12px; font-weight: 600; text-transform: uppercase; padding: 0 4px;">Connected (2)</div>
+            
+            <div class="list-item" style="border: 2px solid #10b981;">
+                <div class="list-icon" style="background: #10b981; color: white; font-size: 16px;">🦊</div>
+                <div class="list-content">
+                    <div class="list-title">MetaMask</div>
+                    <div class="list-subtitle">0x742d...3a91</div>
+                </div>
+                <span class="badge badge-success">Connected</span>
+            </div>
+
+            <div class="list-item" style="border: 2px solid #10b981; margin-bottom: 24px;">
+                <div class="list-icon" style="background: #3375BB; color: white; font-size: 16px;">🛡️</div>
+                <div class="list-content">
+                    <div class="list-title">Trust Wallet</div>
+                    <div class="list-subtitle">0x8f45...7c21</div>
+                </div>
+                <span class="badge badge-success">Connected</span>
+            </div>
+
+            <!-- Available Wallets -->
+            <div style="font-size: 12px; color: #999; margin-bottom: 12px; font-weight: 600; text-transform: uppercase; padding: 0 4px;">Available Wallets</div>
+
+            <div class="list-item">
+                <div class="list-icon" style="background: #E84142; color: white;">💼</div>
+                <div class="list-content">
+                    <div class="list-title">Coinbase Wallet</div>
+                    <div class="list-subtitle">Multi-chain support</div>
+                </div>
+                <button class="btn btn-primary" style="padding: 8px 16px; font-size: 13px;">Connect</button>
+            </div>
+
+            <div class="list-item">
+                <div class="list-icon" style="background: #7B3FE4; color: white;">🌈</div>
+                <div class="list-content">
+                    <div class="list-title">Rainbow</div>
+                    <div class="list-subtitle">Ethereum & EVM chains</div>
+                </div>
+                <button class="btn btn-primary" style="padding: 8px 16px; font-size: 13px;">Connect</button>
+            </div>
+
+            <div class="list-item">
+                <div class="list-icon" style="background: #000; color: white;">🧊</div>
+                <div class="list-content">
+                    <div class="list-title">Ledger</div>
+                    <div class="list-subtitle">Hardware wallet</div>
+                </div>
+                <button class="btn btn-primary" style="padding: 8px 16px; font-size: 13px;">Connect</button>
+            </div>
+
+            <div class="list-item">
+                <div class="list-icon" style="background: #2775CA; color: white;">❄️</div>
+                <div class="list-content">
+                    <div class="list-title">Phantom</div>
+                    <div class="list-subtitle">Solana wallet</div>
+                </div>
+                <button class="btn btn-primary" style="padding: 8px 16px; font-size: 13px;">Connect</button>
+            </div>
+
+            <div class="list-item">
+                <div class="list-icon" style="background: #FF5A1F; color: white;">🌐</div>
+                <div class="list-content">
+                    <div class="list-title">WalletConnect</div>
+                    <div class="list-subtitle">Connect any wallet</div>
+                </div>
+                <button class="btn btn-primary" style="padding: 8px 16px; font-size: 13px;">Connect</button>
+            </div>
+
+            <div style="background: #f0f7ff; padding: 16px; border-radius: 12px; margin-top: 20px;">
+                <div style="display: flex; gap: 12px;">
+                    <div style="font-size: 24px;">ℹ️</div>
+                    <div>
+                        <div style="font-size: 13px; font-weight: 600; margin-bottom: 4px;">Secure Connection</div>
+                        <div style="font-size: 12px; color: #666; line-height: 1.4;">
+                            We never store your private keys. Wallet connections are encrypted and secure.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Navigation -->
+        <div class="bottom-nav">
+            <div class="nav-item" onclick="window.location.href='dashboard.html'">
+                <div class="nav-icon">🏠</div>
+                <div>Home</div>
+            </div>
+            <div class="nav-item" onclick="window.location.href='transactions.html'">
+                <div class="nav-icon">📊</div>
+                <div>Activity</div>
+            </div>
+            <div class="nav-item" onclick="window.location.href='earn.html'">
+                <div class="nav-icon">💰</div>
+                <div>Earn</div>
+            </div>
+            <div class="nav-item" onclick="window.location.href='cards.html'">
+                <div class="nav-icon">💳</div>
+                <div>Card</div>
+            </div>
+            <div class="nav-item" onclick="window.location.href='menu.html'">
+                <div class="nav-icon">⚙️</div>
+                <div>More</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+

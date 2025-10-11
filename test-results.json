@@ -1,0 +1,24 @@
+{
+  "timestamp": "2025-10-05T11:41:19.073Z",
+  "totalPages": 15,
+  "successCount": 15,
+  "errorCount": 0,
+  "pages": [
+    "index.html",
+    "test-checklist.html",
+    "register.html",
+    "dashboard.html",
+    "menu.html",
+    "connect-wallet.html",
+    "membership.html",
+    "add-funds.html",
+    "withdraw.html",
+    "earn.html",
+    "cards.html",
+    "spending-limits.html",
+    "transactions.html",
+    "promotions.html",
+    "settings.html"
+  ],
+  "errors": []
+}

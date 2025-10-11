@@ -1,0 +1,1834 @@
+{
+  "config": {
+    "configFile": "/Users/mac/Desktop/Figma/playwright.config.js",
+    "rootDir": "/Users/mac/Desktop/Figma/tests",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/Users/mac/Desktop/Figma/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/mac/Desktop/Figma/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.55.1",
+    "workers": 1,
+    "webServer": {
+      "command": "python3 -m http.server 8000",
+      "url": "http://localhost:8000",
+      "reuseExistingServer": true
+    }
+  },
+  "suites": [
+    {
+      "title": "wireframes.spec.js",
+      "file": "wireframes.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Page Loading Tests",
+          "file": "wireframes.spec.js",
+          "line": 5,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Navigation Hub page should load",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 128,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-05T11:47:41.530Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "950f205c30ebd1cbe17a-005fc6bf16122e38b3fa",
+              "file": "wireframes.spec.js",
+              "line": 24,
+              "column": 5
+            },
+            {
+              "title": "Registration page should load",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 112,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-05T11:47:41.758Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "950f205c30ebd1cbe17a-ce203537b797be0755a8",
+              "file": "wireframes.spec.js",
+              "line": 24,
+              "column": 5
+            },
+            {
+              "title": "Dashboard page should load",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 112,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-05T11:47:41.876Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "950f205c30ebd1cbe17a-40b38d109938d0c92413",
+              "file": "wireframes.spec.js",
+              "line": 24,
+              "column": 5
+            },
+            {
+              "title": "Menu page should load",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 113,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-05T11:47:41.993Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "950f205c30ebd1cbe17a-3491562c260d0d148ed7",
+              "file": "wireframes.spec.js",
+              "line": 24,
+              "column": 5
+            },
+            {
+              "title": "Connect Wallet page should load",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 113,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-05T11:47:42.110Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "950f205c30ebd1cbe17a-39044373cbf06ff27012",
+              "file": "wireframes.spec.js",
+              "line": 24,
+              "column": 5
+            },
+            {
+              "title": "Membership page should load",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 119,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-05T11:47:42.226Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "950f205c30ebd1cbe17a-2f43afb81d0ba5519210",
+              "file": "wireframes.spec.js",
+              "line": 24,
+              "column": 5
+            },
+            {
+              "title": "Add Funds page should load",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 106,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-05T11:47:42.349Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "950f205c30ebd1cbe17a-e131090cd3041e65ec7a",
+              "file": "wireframes.spec.js",
+              "line": 24,
+              "column": 5
+            },
+            {
+              "title": "Withdraw page should load",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 113,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-05T11:47:42.458Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "950f205c30ebd1cbe17a-dea422a679398b52b304",
+              "file": "wireframes.spec.js",
+              "line": 24,
+              "column": 5
+            },
+            {
+              "title": "Earn page should load",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 116,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-05T11:47:42.575Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "950f205c30ebd1cbe17a-84cafd798dbbf59a9a28",
+              "file": "wireframes.spec.js",
+              "line": 24,
+              "column": 5
+            },
+            {
+              "title": "Cards page should load",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 116,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-05T11:47:42.695Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "950f205c30ebd1cbe17a-99e7ebde32a19b414b6f",
+              "file": "wireframes.spec.js",
+              "line": 24,
+              "column": 5
+            },
+            {
+              "title": "Spending Limits page should load",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 106,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-05T11:47:42.815Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "950f205c30ebd1cbe17a-b968280189f8da711d06",
+              "file": "wireframes.spec.js",
+              "line": 24,
+              "column": 5
+            },
+            {
+              "title": "Transactions page should load",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 114,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-05T11:47:42.924Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "950f205c30ebd1cbe17a-3f778e7b934197cd9bcc",
+              "file": "wireframes.spec.js",
+              "line": 24,
+              "column": 5
+            },
+            {
+              "title": "Promotions page should load",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 125,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-05T11:47:43.042Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "950f205c30ebd1cbe17a-2d7a13f3eaa31cc2caf4",
+              "file": "wireframes.spec.js",
+              "line": 24,
+              "column": 5
+            },
+            {
+              "title": "Settings page should load",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 116,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-05T11:47:43.170Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "950f205c30ebd1cbe17a-8e8af681e78d3ca6aa56",
+              "file": "wireframes.spec.js",
+              "line": 24,
+              "column": 5
+            }
+          ]
+        },
+        {
+          "title": "Registration Flow",
+          "file": "wireframes.spec.js",
+          "line": 36,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should navigate through registration with Passkey",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 247,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-05T11:47:43.291Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "950f205c30ebd1cbe17a-3c3777118a51cf149a32",
+              "file": "wireframes.spec.js",
+              "line": 37,
+              "column": 3
+            },
+            {
+              "title": "should navigate through registration with Google",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 195,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-05T11:47:43.542Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "950f205c30ebd1cbe17a-f69c87726adb9e156e9e",
+              "file": "wireframes.spec.js",
+              "line": 54,
+              "column": 3
+            },
+            {
+              "title": "should navigate through Web3 wallet flow",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 262,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-05T11:47:43.740Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "950f205c30ebd1cbe17a-488b9f70182b8b009dd1",
+              "file": "wireframes.spec.js",
+              "line": 64,
+              "column": 3
+            },
+            {
+              "title": "should allow skipping name input",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 195,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-05T11:47:44.007Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "950f205c30ebd1cbe17a-1a9b4e25f4300de5d53a",
+              "file": "wireframes.spec.js",
+              "line": 84,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "Dashboard Tests",
+          "file": "wireframes.spec.js",
+          "line": 96,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should display total balance",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 98,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-05T11:47:44.206Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "950f205c30ebd1cbe17a-61d3d409b77ac6f1d19b",
+              "file": "wireframes.spec.js",
+              "line": 101,
+              "column": 3
+            },
+            {
+              "title": "should show asset list",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 113,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-05T11:47:44.308Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "950f205c30ebd1cbe17a-dc4bf9cab6962bf2d4b2",
+              "file": "wireframes.spec.js",
+              "line": 107,
+              "column": 3
+            },
+            {
+              "title": "should have working quick action buttons",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 163,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-05T11:47:44.425Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "950f205c30ebd1cbe17a-d0086c799608c573b147",
+              "file": "wireframes.spec.js",
+              "line": 112,
+              "column": 3
+            },
+            {
+              "title": "should take screenshot of dashboard",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 162,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-05T11:47:44.592Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "950f205c30ebd1cbe17a-1ffd7575c2a10ed29eef",
+              "file": "wireframes.spec.js",
+              "line": 118,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "Bottom Navigation Tests",
+          "file": "wireframes.spec.js",
+          "line": 124,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should navigate to Home",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 145,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-05T11:47:44.758Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "950f205c30ebd1cbe17a-44e77a721136ade34613",
+              "file": "wireframes.spec.js",
+              "line": 138,
+              "column": 5
+            },
+            {
+              "title": "should navigate to Activity",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 148,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-05T11:47:44.907Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "950f205c30ebd1cbe17a-721980939988afe28441",
+              "file": "wireframes.spec.js",
+              "line": 138,
+              "column": 5
+            },
+            {
+              "title": "should navigate to Earn",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 149,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-05T11:47:45.059Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "950f205c30ebd1cbe17a-364c13addba7cdbc04c4",
+              "file": "wireframes.spec.js",
+              "line": 138,
+              "column": 5
+            },
+            {
+              "title": "should navigate to Card",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 149,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-05T11:47:45.212Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "950f205c30ebd1cbe17a-73a18d364713bd17ab0f",
+              "file": "wireframes.spec.js",
+              "line": 138,
+              "column": 5
+            },
+            {
+              "title": "should navigate to More",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 142,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-05T11:47:45.364Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "950f205c30ebd1cbe17a-3a05dc57628f23cb6b01",
+              "file": "wireframes.spec.js",
+              "line": 138,
+              "column": 5
+            }
+          ]
+        },
+        {
+          "title": "Card Management Tests",
+          "file": "wireframes.spec.js",
+          "line": 149,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should navigate from cards to spending limits",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 214,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-05T11:47:45.510Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "950f205c30ebd1cbe17a-574b65c4a952c84a31eb",
+              "file": "wireframes.spec.js",
+              "line": 150,
+              "column": 3
+            },
+            {
+              "title": "should show card details",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 116,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-05T11:47:45.727Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "950f205c30ebd1cbe17a-938cb9a85e1963018cc5",
+              "file": "wireframes.spec.js",
+              "line": 168,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "Wallet Connection Tests",
+          "file": "wireframes.spec.js",
+          "line": 177,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should list available wallets",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 158,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-05T11:47:45.847Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "950f205c30ebd1cbe17a-300730bd9ed9a2d8f6f9",
+              "file": "wireframes.spec.js",
+              "line": 178,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "Earn Section Tests",
+          "file": "wireframes.spec.js",
+          "line": 193,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should display earning opportunities",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 121,
+                      "error": {
+                        "message": "Error: expect.toBeVisible: Error: strict mode violation: locator('text=/\\\\d+\\\\.\\\\d+%/') resolved to 5 elements:\n    1) <div>5.2%</div> aka getByText('5.2%')\n    2) <div>4.8%</div> aka getByText('4.8%')\n    3) <div>8.5%</div> aka getByText('8.5%')\n    4) <div>3.5%</div> aka getByText('3.5%')\n    5) <div>12.8%</div> aka getByText('12.8%')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('text=/\\\\d+\\\\.\\\\d+%/')\u001b[22m\n",
+                        "stack": "Error: expect.toBeVisible: Error: strict mode violation: locator('text=/\\\\d+\\\\.\\\\d+%/') resolved to 5 elements:\n    1) <div>5.2%</div> aka getByText('5.2%')\n    2) <div>4.8%</div> aka getByText('4.8%')\n    3) <div>8.5%</div> aka getByText('8.5%')\n    4) <div>3.5%</div> aka getByText('3.5%')\n    5) <div>12.8%</div> aka getByText('12.8%')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('text=/\\\\d+\\\\.\\\\d+%/')\u001b[22m\n\n    at /Users/mac/Desktop/Figma/tests/wireframes.spec.js:201:55",
+                        "location": {
+                          "file": "/Users/mac/Desktop/Figma/tests/wireframes.spec.js",
+                          "column": 55,
+                          "line": 201
+                        },
+                        "snippet": "  199 |     \n  200 |     // Check for APY percentages\n> 201 |     await expect(page.locator('text=/\\\\d+\\\\.\\\\d+%/')).toBeVisible();\n      |                                                       ^\n  202 |     \n  203 |     // Take screenshot\n  204 |     await page.screenshot({ path: 'test-results/earn.png', fullPage: true });"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/mac/Desktop/Figma/tests/wireframes.spec.js",
+                            "column": 55,
+                            "line": 201
+                          },
+                          "message": "Error: expect.toBeVisible: Error: strict mode violation: locator('text=/\\\\d+\\\\.\\\\d+%/') resolved to 5 elements:\n    1) <div>5.2%</div> aka getByText('5.2%')\n    2) <div>4.8%</div> aka getByText('4.8%')\n    3) <div>8.5%</div> aka getByText('8.5%')\n    4) <div>3.5%</div> aka getByText('3.5%')\n    5) <div>12.8%</div> aka getByText('12.8%')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('text=/\\\\d+\\\\.\\\\d+%/')\u001b[22m\n\n\n  199 |     \n  200 |     // Check for APY percentages\n> 201 |     await expect(page.locator('text=/\\\\d+\\\\.\\\\d+%/')).toBeVisible();\n      |                                                       ^\n  202 |     \n  203 |     // Take screenshot\n  204 |     await page.screenshot({ path: 'test-results/earn.png', fullPage: true });\n    at /Users/mac/Desktop/Figma/tests/wireframes.spec.js:201:55"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-05T11:47:46.009Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/mac/Desktop/Figma/test-results/wireframes-Earn-Section-Te-548bc-splay-earning-opportunities-chromium/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/mac/Desktop/Figma/test-results/wireframes-Earn-Section-Te-548bc-splay-earning-opportunities-chromium/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/mac/Desktop/Figma/test-results/wireframes-Earn-Section-Te-548bc-splay-earning-opportunities-chromium/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/mac/Desktop/Figma/tests/wireframes.spec.js",
+                        "column": 55,
+                        "line": 201
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "950f205c30ebd1cbe17a-5064e6afc42be5cbb80f",
+              "file": "wireframes.spec.js",
+              "line": 194,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "Transactions Tests",
+          "file": "wireframes.spec.js",
+          "line": 209,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should display transaction history",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 174,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-05T11:47:46.393Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "950f205c30ebd1cbe17a-83654a31be9db4405d38",
+              "file": "wireframes.spec.js",
+              "line": 210,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "Menu and Settings Tests",
+          "file": "wireframes.spec.js",
+          "line": 224,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should navigate from menu to settings",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 190,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-05T11:47:46.663Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "950f205c30ebd1cbe17a-ca70d34a131b03a72f1e",
+              "file": "wireframes.spec.js",
+              "line": 225,
+              "column": 3
+            },
+            {
+              "title": "should display user profile in settings",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 123,
+                      "error": {
+                        "message": "Error: expect.toBeVisible: Error: strict mode violation: locator('text=John Doe') resolved to 2 elements:\n    1) <div>John Doe</div> aka getByText('John Doe').first()\n    2) <div>John Doe</div> aka getByText('John Doe').nth(1)\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('text=John Doe')\u001b[22m\n",
+                        "stack": "Error: expect.toBeVisible: Error: strict mode violation: locator('text=John Doe') resolved to 2 elements:\n    1) <div>John Doe</div> aka getByText('John Doe').first()\n    2) <div>John Doe</div> aka getByText('John Doe').nth(1)\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('text=John Doe')\u001b[22m\n\n    at /Users/mac/Desktop/Figma/tests/wireframes.spec.js:240:49",
+                        "location": {
+                          "file": "/Users/mac/Desktop/Figma/tests/wireframes.spec.js",
+                          "column": 49,
+                          "line": 240
+                        },
+                        "snippet": "  238 |     \n  239 |     // Check for user name\n> 240 |     await expect(page.locator('text=John Doe')).toBeVisible();\n      |                                                 ^\n  241 |     \n  242 |     // Check for email\n  243 |     await expect(page.locator('text=john.doe@email.com')).toBeVisible();"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/mac/Desktop/Figma/tests/wireframes.spec.js",
+                            "column": 49,
+                            "line": 240
+                          },
+                          "message": "Error: expect.toBeVisible: Error: strict mode violation: locator('text=John Doe') resolved to 2 elements:\n    1) <div>John Doe</div> aka getByText('John Doe').first()\n    2) <div>John Doe</div> aka getByText('John Doe').nth(1)\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('text=John Doe')\u001b[22m\n\n\n  238 |     \n  239 |     // Check for user name\n> 240 |     await expect(page.locator('text=John Doe')).toBeVisible();\n      |                                                 ^\n  241 |     \n  242 |     // Check for email\n  243 |     await expect(page.locator('text=john.doe@email.com')).toBeVisible();\n    at /Users/mac/Desktop/Figma/tests/wireframes.spec.js:240:49"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-05T11:47:46.857Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/mac/Desktop/Figma/test-results/wireframes-Menu-and-Settin-80f5c-ay-user-profile-in-settings-chromium/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/mac/Desktop/Figma/test-results/wireframes-Menu-and-Settin-80f5c-ay-user-profile-in-settings-chromium/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/mac/Desktop/Figma/test-results/wireframes-Menu-and-Settin-80f5c-ay-user-profile-in-settings-chromium/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/mac/Desktop/Figma/tests/wireframes.spec.js",
+                        "column": 49,
+                        "line": 240
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "950f205c30ebd1cbe17a-d6ca5fb5557559cd9c6d",
+              "file": "wireframes.spec.js",
+              "line": 236,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "Visual Screenshots",
+          "file": "wireframes.spec.js",
+          "line": 251,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Screenshot: register.html",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 196,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-05T11:47:47.230Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "950f205c30ebd1cbe17a-abfaf3755d5b8b03053a",
+              "file": "wireframes.spec.js",
+              "line": 269,
+              "column": 5
+            },
+            {
+              "title": "Screenshot: dashboard.html",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 163,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-05T11:47:47.526Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "950f205c30ebd1cbe17a-d970fcf486d2f8c0ead6",
+              "file": "wireframes.spec.js",
+              "line": 269,
+              "column": 5
+            },
+            {
+              "title": "Screenshot: menu.html",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 162,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-05T11:47:47.693Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "950f205c30ebd1cbe17a-1109503ba62546c3dd0e",
+              "file": "wireframes.spec.js",
+              "line": 269,
+              "column": 5
+            },
+            {
+              "title": "Screenshot: connect-wallet.html",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 162,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-05T11:47:47.861Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "950f205c30ebd1cbe17a-79407653769edb0eba1c",
+              "file": "wireframes.spec.js",
+              "line": 269,
+              "column": 5
+            },
+            {
+              "title": "Screenshot: membership.html",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 173,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-05T11:47:48.027Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "950f205c30ebd1cbe17a-714c615d9150ff9f567e",
+              "file": "wireframes.spec.js",
+              "line": 269,
+              "column": 5
+            },
+            {
+              "title": "Screenshot: add-funds.html",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 151,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-05T11:47:48.203Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "950f205c30ebd1cbe17a-4cc01b54204a2c1cf1c2",
+              "file": "wireframes.spec.js",
+              "line": 269,
+              "column": 5
+            },
+            {
+              "title": "Screenshot: withdraw.html",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 182,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-05T11:47:48.358Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "950f205c30ebd1cbe17a-b5dc90af556d7eb02f05",
+              "file": "wireframes.spec.js",
+              "line": 269,
+              "column": 5
+            },
+            {
+              "title": "Screenshot: earn.html",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 171,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-05T11:47:48.544Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "950f205c30ebd1cbe17a-319ee8b846163ccce46e",
+              "file": "wireframes.spec.js",
+              "line": 269,
+              "column": 5
+            },
+            {
+              "title": "Screenshot: cards.html",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 159,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-05T11:47:48.718Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "950f205c30ebd1cbe17a-ef1310f962080dd2a4c4",
+              "file": "wireframes.spec.js",
+              "line": 269,
+              "column": 5
+            },
+            {
+              "title": "Screenshot: spending-limits.html",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 156,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-05T11:47:48.882Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "950f205c30ebd1cbe17a-abee2e3d18091790b048",
+              "file": "wireframes.spec.js",
+              "line": 269,
+              "column": 5
+            },
+            {
+              "title": "Screenshot: transactions.html",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 164,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-05T11:47:49.042Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "950f205c30ebd1cbe17a-a5baf90b014d9f775b33",
+              "file": "wireframes.spec.js",
+              "line": 269,
+              "column": 5
+            },
+            {
+              "title": "Screenshot: promotions.html",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 178,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-05T11:47:49.210Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "950f205c30ebd1cbe17a-e4a693435c419d6d839d",
+              "file": "wireframes.spec.js",
+              "line": 269,
+              "column": 5
+            },
+            {
+              "title": "Screenshot: settings.html",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 164,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-05T11:47:49.391Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "950f205c30ebd1cbe17a-3bcf5c9f70eae2b01efc",
+              "file": "wireframes.spec.js",
+              "line": 269,
+              "column": 5
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2025-10-05T11:47:41.275Z",
+    "duration": 8309.071,
+    "expected": 45,
+    "skipped": 0,
+    "unexpected": 2,
+    "flaky": 0
+  }
+}

@@ -48,3 +48,4 @@ test('verify floating navigation is visible and styled correctly', async ({ page
 
 
 
+
